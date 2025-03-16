@@ -1,0 +1,13 @@
+{
+  "auth.email": "Email",
+  "auth.forgot-password": "Forgot Password?",
+  "auth.password": "Password",
+  "auth.sign-in": "Sign In",
+  "auth.sign-out": "Sign Out",
+  "auth.sign-up": "Sign Up",
+  "common.about": "About",
+  "common.dark": "Dark",
+  "common.light": "Light",
+  "common.settings": "Settings",
+  "common.theme": "Theme"
+}
