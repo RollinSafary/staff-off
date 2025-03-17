@@ -1,21 +1,21 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: "./src/index.tsx",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/',
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+    publicPath: "/",
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      "@": path.resolve(__dirname, "src"),
       // Make React available globally (no need to import in every file)
-      react: path.resolve('./node_modules/react'),
+      react: path.resolve("./node_modules/react"),
     },
   },
   module: {
@@ -23,11 +23,11 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: "babel-loader",
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.svg$/,
@@ -36,12 +36,12 @@ module.exports = {
             issuer: /\.[jt]sx?$/,
             use: [
               {
-                loader: '@svgr/webpack',
+                loader: "@svgr/webpack",
                 options: {
                   svgoConfig: {
                     plugins: [
                       {
-                        name: 'preset-default',
+                        name: "preset-default",
                         params: {
                           overrides: {
                             removeViewBox: false,
@@ -51,30 +51,30 @@ module.exports = {
                     ],
                   },
                   titleProp: true,
-                  exportType: 'named',
+                  exportType: "named",
                 },
               },
-              'url-loader',
+              "url-loader",
             ],
           },
           {
-            type: 'asset/resource',
+            type: "asset/resource",
           },
         ],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: "./public/index.html",
     }),
     // Load environment variables but don't inject them directly into the bundle
     new Dotenv({
-      path: './.env', // Path to your .env file
+      path: "./.env", // Path to your .env file
       systemvars: true, // Load system environment variables as well
       safe: true, // Only use variables in .env.example to avoid leaking secrets
     }),
@@ -84,6 +84,6 @@ module.exports = {
     historyApiFallback: true,
     port: 3000,
     hot: true,
-    open: true,
+    open: false,
   },
 };
