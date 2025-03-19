@@ -11,17 +11,17 @@ const RequestCards: React.FC = () => {
   const cards = [
     {
       id: 1,
-      title: 3,
+      count: 3,
       description: "Number of employees",
     },
     {
       id: 2,
-      title: 0,
+      count: 2,
       description: "Requests today",
     },
     {
       id: 3,
-      title: 0,
+      count: 1,
       description: "Requests this month",
     },
   ];
@@ -51,7 +51,7 @@ const RequestCards: React.FC = () => {
             >
               <CardContent sx={{ height: "100%" }}>
                 <Typography variant="h5" component="div">
-                  {card.title}
+                  {card.count}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {card.description}
