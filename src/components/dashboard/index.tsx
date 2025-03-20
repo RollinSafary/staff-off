@@ -1,5 +1,4 @@
 import Calendar from "./components/Calendar";
-import React from "react";
 import RequestCards from "./components/requestCards";
 import UserInfoCard from "./components/userInfoCard";
 import PendingRequests from "./components/pendingRequests";

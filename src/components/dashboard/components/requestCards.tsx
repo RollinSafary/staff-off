@@ -26,7 +26,7 @@ const RequestCards: React.FC = () => {
     },
   ];
   return (
-    <div>
+    <div className="requestCards">
       <Box
         sx={{
           width: "100%",
