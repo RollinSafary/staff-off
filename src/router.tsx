@@ -1,23 +1,29 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import App from './App';
-import { DEFAULT_LANGUAGE } from './constants/i18n';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import App from "./App"; // Весь layout с Navbar и Footer
+import DashboardPage from "./pages/DashboardPage";
+import TranslatedContent from "./App"; // Твой основной контент
+import { DEFAULT_LANGUAGE } from "./constants/i18n";
+import Home from "./pages/Home"; // Главная страница
 
-/**
- * Main router component that handles all application routes
- * with proper language path support.
- */
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Default route - redirects to the default language */}
-        <Route path="/" element={<App />} />
+        {/* Главный компонент с Layout (Navbar и Footer) */}
+        <Route path="/" element={<App />}>
+          {/* Главная страница */}
+          <Route index element={<Home />} />
 
-        {/* Language-specific routes */}
-        <Route path="/:lang/*" element={<App />} />
+          {/* Другие страницы */}
+          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="translated-content" element={<TranslatedContent />} />
 
-        {/* Fallback route */}
-        <Route path="*" element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />} />
+          {/* Перенаправление для несуществующих маршрутов */}
+          <Route
+            path="*"
+            element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />}
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
