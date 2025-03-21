@@ -12,6 +12,7 @@ import {
 import FilterListIcon from "@mui/icons-material/FilterList";
 import CloseIcon from "@mui/icons-material/Close";
 import SaveIcon from "@mui/icons-material/Save";
+import { useTranslation } from "react-i18next";
 
 const locations = ["Armenia", "USA", "Russia"] as const;
 const teams = ["Development", "Design", "Marketing"] as const;
@@ -22,6 +23,7 @@ type TeamType = (typeof teams)[number];
 type LeaveType = (typeof leaveTypes)[number];
 
 export default function CalendarOptions() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [location, setLocation] = useState<LocationType[]>([]);
   const [team, setTeam] = useState<TeamType[]>([]);
@@ -41,12 +43,12 @@ export default function CalendarOptions() {
         startIcon={<FilterListIcon />}
         onClick={handleOpen}
       >
-        Filters
+        {t("filters")}
       </Button>
 
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle>
-          Calendar options
+          {t("calendar")} {t("options")}
           <IconButton
             aria-label="close"
             onClick={handleClose}
@@ -64,7 +66,7 @@ export default function CalendarOptions() {
             renderInput={(params) => (
               <TextField
                 {...params}
-                label="Location"
+                label={t("location")}
                 fullWidth
                 margin="normal"
               />
@@ -76,7 +78,12 @@ export default function CalendarOptions() {
             value={team}
             onChange={(e, newValue) => setTeam(newValue)}
             renderInput={(params) => (
-              <TextField {...params} label="Team" fullWidth margin="normal" />
+              <TextField
+                {...params}
+                label={t("team")}
+                fullWidth
+                margin="normal"
+              />
             )}
           />
           <Autocomplete
@@ -87,7 +94,7 @@ export default function CalendarOptions() {
             renderInput={(params) => (
               <TextField
                 {...params}
-                label="Leave types"
+                label={t("leave-types")}
                 fullWidth
                 margin="normal"
               />
@@ -96,7 +103,7 @@ export default function CalendarOptions() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="inherit">
-            Cancel
+            {t("cancel")}
           </Button>
           <Button
             onClick={handleSave}
@@ -104,7 +111,7 @@ export default function CalendarOptions() {
             color="primary"
             startIcon={<SaveIcon />}
           >
-            Save
+            {t("save")}
           </Button>
         </DialogActions>
       </Dialog>

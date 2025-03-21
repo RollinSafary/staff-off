@@ -6,23 +6,26 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const RequestCards: React.FC = () => {
+  const { t } = useTranslation();
+
   const cards = [
     {
       id: 1,
       count: 3,
-      description: "Number of employees",
+      description: t("number-of-employees"),
     },
     {
       id: 2,
       count: 2,
-      description: "Requests today",
+      description: t("requests-today"),
     },
     {
       id: 3,
       count: 1,
-      description: "Requests this month",
+      description: t("requests-this-month"),
     },
   ];
   return (
