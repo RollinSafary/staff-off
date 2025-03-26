@@ -26,5 +26,7 @@
   "toast.success": "Success",
   "toast.success-example": "This is a success message!",
   "toast.warning": "Warning",
-  "toast.warning-example": "This is a warning message!"
+  "toast.warning-example": "This is a warning message!",
+  "full report": "full report",
+  "reports": "Reports"
 }

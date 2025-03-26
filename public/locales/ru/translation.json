@@ -26,5 +26,7 @@
   "toast.success": "Успех",
   "toast.success-example": "Это сообщение об успехе!",
   "toast.warning": "Предупреждение",
-  "toast.warning-example": "Это предупреждающее сообщение!"
+  "toast.warning-example": "Это предупреждающее сообщение!",
+  "full report": "полный отчет",
+  "reports": "Отчеты"
 }
