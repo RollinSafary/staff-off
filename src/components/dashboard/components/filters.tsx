@@ -43,12 +43,12 @@ export default function CalendarOptions() {
         startIcon={<FilterListIcon />}
         onClick={handleOpen}
       >
-        {t("filters")}
+        {t("page.dashboard.filters")}
       </Button>
 
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle>
-          {t("calendar")} {t("options")}
+          {t("page.dashboard.calendar")} {t("page.dashboard.options")}
           <IconButton
             aria-label="close"
             onClick={handleClose}
@@ -66,7 +66,7 @@ export default function CalendarOptions() {
             renderInput={(params) => (
               <TextField
                 {...params}
-                label={t("location")}
+                label={t("page.dashboard.location")}
                 fullWidth
                 margin="normal"
               />
@@ -80,7 +80,7 @@ export default function CalendarOptions() {
             renderInput={(params) => (
               <TextField
                 {...params}
-                label={t("team")}
+                label={t("page.dashboard.team")}
                 fullWidth
                 margin="normal"
               />
@@ -94,7 +94,7 @@ export default function CalendarOptions() {
             renderInput={(params) => (
               <TextField
                 {...params}
-                label={t("leave-types")}
+                label={t("page.dashboard.leave-types")}
                 fullWidth
                 margin="normal"
               />
@@ -103,7 +103,7 @@ export default function CalendarOptions() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="inherit">
-            {t("cancel")}
+            {t("page.dashboard.cancel")}
           </Button>
           <Button
             onClick={handleSave}
@@ -111,7 +111,7 @@ export default function CalendarOptions() {
             color="primary"
             startIcon={<SaveIcon />}
           >
-            {t("save")}
+            {t("page.dashboard.save")}
           </Button>
         </DialogActions>
       </Dialog>

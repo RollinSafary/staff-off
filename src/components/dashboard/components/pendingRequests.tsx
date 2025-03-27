@@ -21,14 +21,15 @@ const PendingRequests: React.FC = () => {
         }}
       >
         <Typography variant="h6" align="left" width="100%">
-          {t("requests")} {t("pending")}
+          {t("page.dashboard.requests")} {t("page.dashboard.pending")}
         </Typography>
         <PendingActionsIcon sx={{ fontSize: 48, my: 1 }} />
         <Typography variant="body2" color="text.secondary">
-          {t("requests")} {t("pending")}
+          {t("page.dashboard.requests")} {t("page.dashboard.pending")}
         </Typography>
       </Card>
     </div>
   );
 };
+
 export default PendingRequests;

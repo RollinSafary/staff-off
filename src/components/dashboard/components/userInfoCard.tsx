@@ -6,7 +6,6 @@ import {
   Button,
   Card,
   CardContent,
-  CardMedia,
   Typography,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
@@ -37,14 +36,16 @@ const UserInfoCard: React.FC = () => {
         >
           <Avatar sx={{ width: 56, height: 56 }}>U</Avatar>
           <Box>
-            <Typography variant="h4">{t("user-name")}</Typography>
+            <Typography variant="h4">
+              {t("page.dashboard.user-name")}
+            </Typography>
             <Button variant="contained" color="primary" size="small">
-              {t("my-requests")}
+              {t("page.dashboard.my-requests")}
             </Button>
           </Box>
         </Box>
         <Typography variant="h3" sx={{ mt: 2 }}>
-          {t("Balance")}
+          {t("page.dashboard.balance")}
         </Typography>
         <Box
           sx={{
@@ -56,12 +57,12 @@ const UserInfoCard: React.FC = () => {
         >
           <Card sx={{ maxWidth: 280, flex: 1, cursor: "pointer" }}>
             <CardContent>
-              <Typography variant="h6">{t("casual")}</Typography>
+              <Typography variant="h6">{t("page.dashboard.casual")}</Typography>
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 280, flex: 1, cursor: "pointer" }}>
             <CardContent>
-              <Typography variant="h6">{t("title")}</Typography>
+              <Typography variant="h6">{t("page.dashboard.title")}</Typography>
             </CardContent>
           </Card>
         </Box>

@@ -15,17 +15,17 @@ const RequestCards: React.FC = () => {
     {
       id: 1,
       count: 3,
-      description: t("number-of-employees"),
+      description: t("page.dashboard.number-of-employees"),
     },
     {
       id: 2,
       count: 2,
-      description: t("requests-today"),
+      description: t("page.dashboard.requests-today"),
     },
     {
       id: 3,
       count: 1,
-      description: t("requests-this-month"),
+      description: t("page.dashboard.requests-this-month"),
     },
   ];
   return (
@@ -40,7 +40,7 @@ const RequestCards: React.FC = () => {
         }}
       >
         {cards.map((card) => (
-          <Card>
+          <Card key={card.id}>
             <CardActionArea
               sx={{
                 height: "100%",
@@ -67,4 +67,5 @@ const RequestCards: React.FC = () => {
     </div>
   );
 };
+
 export default RequestCards;
