@@ -1,9 +1,16 @@
-import { useState } from 'react';
-import { Avatar, Box, IconButton, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import { useLanguage } from '../../theme/LanguageContext';
-import { settings, getPageTranslation } from '../../mock/navigation';
-import { getTranslation } from '../../mock/translations';
+import { useState } from "react";
+import {
+  Avatar,
+  Box,
+  IconButton,
+  Menu,
+  MenuItem,
+  Tooltip,
+  Typography,
+} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { useLanguage } from "../../theme/LanguageContext";
+import { settings, getPageTranslation } from "../../mock/navigation";
 
 const UserMenu: React.FC = () => {
   const { language } = useLanguage();
@@ -20,7 +27,7 @@ const UserMenu: React.FC = () => {
 
   return (
     <Box sx={{ flexGrow: 0, ml: theme.spacing(1) }}>
-      <Tooltip title={getTranslation('openSettings', language)}>
+      <Tooltip title="Open settings">
         <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
           <Avatar alt="User" src="/static/images/avatar/2.jpg" />
         </IconButton>
@@ -30,20 +37,22 @@ const UserMenu: React.FC = () => {
         id="menu-appbar"
         anchorEl={anchorEl}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         keepMounted
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         open={Boolean(anchorEl)}
         onClose={handleCloseUserMenu}
       >
         {settings.map((setting) => (
           <MenuItem key={setting} onClick={handleCloseUserMenu}>
-            <Typography textAlign="center">{getPageTranslation(setting, language)}</Typography>
+            <Typography textAlign="center">
+              {getPageTranslation(setting, language)}
+            </Typography>
           </MenuItem>
         ))}
       </Menu>
