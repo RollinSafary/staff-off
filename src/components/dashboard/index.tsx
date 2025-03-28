@@ -7,7 +7,7 @@ export default function dashboard() {
   return (
     <>
       <header>
-        <h1> hello Mushegh ! 👋</h1>
+        <h1> hello Mushegh !</h1>
       </header>
       <section className="dashboard-section">
         <div className="right-part">
