@@ -30,7 +30,7 @@ function Home() {
           {t("common.welcome")}
         </Typography>
         <Typography variant="body1" paragraph>
-          {t("common.app_description")}
+          {t("common.app-description")}
         </Typography>
 
         <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 4 }}>
