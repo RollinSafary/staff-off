@@ -13,7 +13,7 @@ const App = () => {
       <ResponsiveProvider>
         <LanguageProvider>
           <Layout>
-            <Outlet /> {/* Now the active page is rendered here */}
+            <Outlet />
           </Layout>
         </LanguageProvider>
       </ResponsiveProvider>

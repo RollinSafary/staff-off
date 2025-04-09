@@ -1,3 +1,4 @@
+import { Translations } from "@/constants/translations";
 import {
   Box,
   Card,
@@ -15,17 +16,17 @@ const RequestCards: React.FC = () => {
     {
       id: 1,
       count: 3,
-      description: t("page.dashboard.number-of-employees"),
+      description: t(Translations.PAGE_DASHBOARD_NUMBER_OF_EMPLOYEES),
     },
     {
       id: 2,
       count: 2,
-      description: t("page.dashboard.requests-today"),
+      description: t(Translations.PAGE_DASHBOARD_REQUESTS_TODAY),
     },
     {
       id: 3,
       count: 1,
-      description: t("page.dashboard.requests-this-month"),
+      description: t(Translations.PAGE_DASHBOARD_REQUESTS_THIS_MONTH),
     },
   ];
   return (

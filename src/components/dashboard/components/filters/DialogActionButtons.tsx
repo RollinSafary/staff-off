@@ -1,6 +1,7 @@
 import { Button, DialogActions } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";
 import { useTranslation } from "react-i18next";
+import { Translations } from "@/constants/translations";
 
 interface DialogActionButtonsProps {
   onCancel: () => void;
@@ -16,7 +17,7 @@ const DialogActionButtons: React.FC<DialogActionButtonsProps> = ({
   return (
     <DialogActions>
       <Button onClick={onCancel} color="inherit">
-        {t("page.dashboard.cancel")}
+        {t(Translations.PAGE_DASHBOARD_CANCEL)}
       </Button>
       <Button
         onClick={onSave}
@@ -24,7 +25,7 @@ const DialogActionButtons: React.FC<DialogActionButtonsProps> = ({
         color="primary"
         startIcon={<SaveIcon />}
       >
-        {t("page.dashboard.save")}
+        {t(Translations.PAGE_DASHBOARD_SAVE)}
       </Button>
     </DialogActions>
   );

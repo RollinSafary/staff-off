@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Balance } from "@mui/icons-material";
+import { Translations } from "@/constants/translations";
 
 const UserInfoCard: React.FC = () => {
   const { t } = useTranslation();
@@ -36,16 +37,14 @@ const UserInfoCard: React.FC = () => {
         >
           <Avatar sx={{ width: 56, height: 56 }}>U</Avatar>
           <Box>
-            <Typography variant="h4">
-              {t("page.dashboard.user-name")}
-            </Typography>
+            <Typography variant="h4">User Name</Typography>
             <Button variant="contained" color="primary" size="small">
-              {t("page.dashboard.my-requests")}
+              {t(Translations.PAGE_DASHBOARD_MY_REQUESTS)}
             </Button>
           </Box>
         </Box>
         <Typography variant="h3" sx={{ mt: 2 }}>
-          {t("page.dashboard.balance")}
+          {t(Translations.PAGE_DASHBOARD_BALANCE)}
         </Typography>
         <Box
           sx={{
@@ -57,12 +56,16 @@ const UserInfoCard: React.FC = () => {
         >
           <Card sx={{ maxWidth: 280, flex: 1, cursor: "pointer" }}>
             <CardContent>
-              <Typography variant="h6">{t("page.dashboard.casual")}</Typography>
+              <Typography variant="h6">
+                {t(Translations.PAGE_DASHBOARD_CASUAL)}
+              </Typography>
             </CardContent>
           </Card>
           <Card sx={{ maxWidth: 280, flex: 1, cursor: "pointer" }}>
             <CardContent>
-              <Typography variant="h6">{t("page.dashboard.title")}</Typography>
+              <Typography variant="h6">
+                {t(Translations.PAGE_DASHBOARD_SCHEDULE)}
+              </Typography>
             </CardContent>
           </Card>
         </Box>

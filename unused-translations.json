@@ -9,5 +9,14 @@
   "common.dark": "Dark",
   "common.light": "Light",
   "common.settings": "Settings",
-  "common.theme": "Theme"
+  "common.theme": "Theme",
+  "page.dashboard.event": "Event",
+  "page.dashboard.leave-types": "Leave Types",
+  "page.dashboard.location": "Location",
+  "page.dashboard.name": "Name",
+  "page.dashboard.options": "Options",
+  "page.dashboard.team": "Team",
+  "page.dashboard.user": "User",
+  "page.dashboard.user-name": "User Name",
+  "toast.success-example": "This is a success message!"
 }

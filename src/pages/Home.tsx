@@ -1,40 +1,41 @@
 import React from "react";
 import { Container, Typography, Box, Button, Stack } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import { Translation, useTranslation } from "react-i18next";
 import useToast from "../hooks/useToast";
+import { Translations } from "@/constants/translations";
 
 function Home() {
   const { t } = useTranslation();
   const toast = useToast();
 
   const showSuccessToast = () => {
-    toast.success(t("toast.success_example"));
+    toast.success(t(Translations.TOAST_SUCCESS));
   };
 
   const showErrorToast = () => {
-    toast.error(t("toast.error_example"));
+    toast.error(t(Translations.TOAST_ERROR_EXAMPLE));
   };
 
   const showWarningToast = () => {
-    toast.warning(t("toast.warning_example"));
+    toast.warning(t(Translations.TOAST_WARNING_EXAMPLE));
   };
 
   const showInfoToast = () => {
-    toast.info(t("toast.info_example"));
+    toast.info(t(Translations.TOAST_INFO_EXAMPLE));
   };
 
   return (
     <Container maxWidth="md">
       <Box sx={{ my: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          {t("common.welcome")}
+          {t(Translations.COMMON_WELCOME)}
         </Typography>
         <Typography variant="body1" paragraph>
-          {t("common.app-description")}
+          {t(Translations.COMMON_APP_DESCRIPTION)}
         </Typography>
 
         <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 4 }}>
-          {t("toast.examples_title")}
+          {t(Translations.TOAST_EXAMPLES_TITLE)}
         </Typography>
         <Stack direction="row" spacing={2} sx={{ mb: 4 }}>
           <Button
@@ -42,20 +43,20 @@ function Home() {
             color="success"
             onClick={showSuccessToast}
           >
-            {t("toast.success")}
+            {t(Translations.TOAST_SUCCESS)}
           </Button>
           <Button variant="contained" color="error" onClick={showErrorToast}>
-            {t("toast.error")}
+            {t(Translations.TOAST_ERROR)}
           </Button>
           <Button
             variant="contained"
             color="warning"
             onClick={showWarningToast}
           >
-            {t("toast.warning")}
+            {t(Translations.TOAST_WARNING)}
           </Button>
           <Button variant="contained" color="info" onClick={showInfoToast}>
-            {t("toast.info")}
+            {t(Translations.TOAST_INFO)}
           </Button>
         </Stack>
       </Box>

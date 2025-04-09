@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { useTranslation } from "react-i18next";
+import { Translations } from "@/constants/translations";
 
 interface FilterButtonProps {
   onClick: () => void;
@@ -15,9 +16,9 @@ const FilterButton: React.FC<FilterButtonProps> = ({ onClick }) => {
       color="primary"
       startIcon={<FilterListIcon />}
       onClick={onClick}
-      aria-label={t("page.dashboard.filters")}
+      aria-label={t(Translations.PAGE_DASHBOARD_FILTERS)}
     >
-      {t("page.dashboard.filters")}
+      {t(Translations.PAGE_DASHBOARD_FILTERS)}
     </Button>
   );
 };

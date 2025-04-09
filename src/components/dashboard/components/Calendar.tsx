@@ -7,6 +7,7 @@ import "./dashboard.css";
 import CalendarOptions from "./filters/filters";
 import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { Translations } from "@/constants/translations";
 
 const DashboardPage: React.FC = () => {
   const { t } = useTranslation();
@@ -15,7 +16,7 @@ const DashboardPage: React.FC = () => {
     <section>
       <Box sx={{ boxShadow: 2, borderRadius: 2, p: 2 }}>
         <div className="filter-container">
-          <h3>{t("page.dashboard.month-overview")}</h3>
+          <h3>{t(Translations.PAGE_DASHBOARD_MONTH_OVERVIEW)}</h3>
           <CalendarOptions />
         </div>
         <div className="calendar-container">
@@ -28,16 +29,13 @@ const DashboardPage: React.FC = () => {
               right: "dayGridMonth,timeGridWeek,timeGridDay,listMonth",
             }}
             buttonText={{
-              today: t("page.dashboard.today"),
-              month: t("page.dashboard.month"),
-              week: t("page.dashboard.week"),
-              day: t("page.dashboard.day"),
-              list: t("page.dashboard.list"),
+              today: t(Translations.PAGE_DASHBOARD_TODAY),
+              month: t(Translations.PAGE_DASHBOARD_MONTH),
+              week: t(Translations.PAGE_DASHBOARD_WEEK),
+              day: t(Translations.PAGE_DASHBOARD_DAY),
+              list: t(Translations.PAGE_DASHBOARD_LIST),
             }}
-            events={[
-              { title: t("page.dashboard.event") + " 1", date: "2025-03-19" },
-              { title: t("page.dashboard.event") + " 2", date: "2025-03-29" },
-            ]}
+            events={[]}
           />
         </div>
       </Box>

@@ -2,6 +2,7 @@ import { Card, Typography } from "@mui/material";
 import React from "react";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
 import { useTranslation } from "react-i18next";
+import { Translations } from "@/constants/translations";
 
 const PendingRequests: React.FC = () => {
   const { t } = useTranslation();
@@ -21,11 +22,11 @@ const PendingRequests: React.FC = () => {
         }}
       >
         <Typography variant="h6" align="left" width="100%">
-          {t("page.dashboard.requests")} {t("page.dashboard.pending")}
+          {t(Translations.PAGE_DASHBOARD_PENDING_REQUESTS)}
         </Typography>
         <PendingActionsIcon sx={{ fontSize: 48, my: 1 }} />
         <Typography variant="body2" color="text.secondary">
-          {t("page.dashboard.requests")} {t("page.dashboard.pending")}
+          {t(Translations.PAGE_DASHBOARD_PENDING_REQUESTS)}
         </Typography>
       </Card>
     </div>

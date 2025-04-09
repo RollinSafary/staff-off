@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import FilterButton from "./FilterButton";
 import DialogActionButtons from "./DialogActionButtons";
 import MultiSelectAutocomplete from "./MultiSelectAutocomplete";
+import { Translations } from "@/constants/translations";
 
 const locations = ["Armenia", "USA", "Russia"];
 const teams = ["Development", "Design", "Marketing"];
@@ -34,7 +35,7 @@ const CalendarOptions = () => {
 
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle>
-          {t("page.dashboard.calendar")} {t("page.dashboard.options")}
+          {t(Translations.PAGE_DASHBOARD_CALENDAR_OPTIONS)}
           <IconButton
             aria-label="close"
             onClick={handleClose}
