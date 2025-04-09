@@ -35,7 +35,7 @@ const CalendarOptions = () => {
 
       <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
         <DialogTitle>
-          {t(Translations.PAGE_DASHBOARD_CALENDAR_OPTIONS)}
+          {t(Translations.PAGE_DASHBOARD_FILTER_CALENDAR_OPTIONS)}
           <IconButton
             aria-label="close"
             onClick={handleClose}
@@ -46,19 +46,19 @@ const CalendarOptions = () => {
         </DialogTitle>
         <DialogContent>
           <MultiSelectAutocomplete
-            label="page.dashboard.location"
+            label="page.dashboard.filter.location"
             options={locations}
             value={location}
             onChange={setLocation}
           />
           <MultiSelectAutocomplete
-            label="page.dashboard.team"
+            label="page.dashboard.filter.team"
             options={teams}
             value={team}
             onChange={setTeam}
           />
           <MultiSelectAutocomplete
-            label="page.dashboard.leave-types"
+            label="page.dashboard.filter.leave-types"
             options={leaveTypes}
             value={leaveType}
             onChange={setLeaveType}

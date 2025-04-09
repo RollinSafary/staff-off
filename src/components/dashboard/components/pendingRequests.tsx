@@ -1,4 +1,4 @@
-import { Card, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import React from "react";
 import PendingActionsIcon from "@mui/icons-material/PendingActions";
 import { useTranslation } from "react-i18next";
@@ -8,15 +8,16 @@ const PendingRequests: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
       <Card
         sx={{
-          maxWidth: 280,
+          minWidth: 280,
           mt: 2,
           p: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+
           textAlign: "center",
           boxShadow: 1,
         }}
@@ -29,7 +30,7 @@ const PendingRequests: React.FC = () => {
           {t(Translations.PAGE_DASHBOARD_PENDING_REQUESTS)}
         </Typography>
       </Card>
-    </div>
+    </Box>
   );
 };
 

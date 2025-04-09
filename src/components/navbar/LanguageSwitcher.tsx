@@ -10,7 +10,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { Language, useLanguage } from "../../theme/LanguageContext";
 import LanguageFlag from "../LanguageFlag";
-import { languageOptions } from "../../mock/languages";
+import { languageOptions } from "../../constants/languages";
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();

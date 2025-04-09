@@ -3,22 +3,26 @@ import RequestCards from "./components/requestCards";
 import UserInfoCard from "./components/userInfoCard";
 import PendingRequests from "./components/pendingRequests";
 import "./components/dashboard.css";
-export default function dashboard() {
+import DashboardSection from "./components/Section";
+import LeftPart from "./components/LeftPart";
+
+const Dashboard = () => {
   return (
     <>
       <header>
         <h1> hello Mushegh !</h1>
       </header>
-      <section className="dashboard-section">
-        <div className="right-part">
+      <DashboardSection>
+        <LeftPart>
           <RequestCards />
           <Calendar />
-        </div>
-        <div className="left-part">
+        </LeftPart>
+        <div>
           <UserInfoCard />
           <PendingRequests />
         </div>
-      </section>
+      </DashboardSection>
     </>
   );
-}
+};
+export default Dashboard;

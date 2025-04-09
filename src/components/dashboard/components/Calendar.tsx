@@ -8,6 +8,8 @@ import CalendarOptions from "./filters/filters";
 import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Translations } from "@/constants/translations";
+import FilterContainer from "./filters/FilterContainer";
+import * as Styled from "./styled";
 
 const DashboardPage: React.FC = () => {
   const { t } = useTranslation();
@@ -15,11 +17,12 @@ const DashboardPage: React.FC = () => {
   return (
     <section>
       <Box sx={{ boxShadow: 2, borderRadius: 2, p: 2 }}>
-        <div className="filter-container">
+        <FilterContainer>
           <h3>{t(Translations.PAGE_DASHBOARD_MONTH_OVERVIEW)}</h3>
           <CalendarOptions />
-        </div>
-        <div className="calendar-container">
+        </FilterContainer>
+        <Box style={{ maxWidth: "100%" }}>
+          <Styled.CalendarStyles />
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, listPlugin]}
             initialView="dayGridMonth"
@@ -37,7 +40,7 @@ const DashboardPage: React.FC = () => {
             }}
             events={[]}
           />
-        </div>
+        </Box>
       </Box>
     </section>
   );

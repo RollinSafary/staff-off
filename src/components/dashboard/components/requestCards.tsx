@@ -30,7 +30,7 @@ const RequestCards: React.FC = () => {
     },
   ];
   return (
-    <div className="requestCards">
+    <div style={{ marginBottom: 15 }}>
       <Box
         sx={{
           width: "100%",

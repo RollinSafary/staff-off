@@ -1,28 +1,22 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Language } from "../../theme/LanguageContext";
-import { pages, getPageTranslation } from "../../mock/navigation";
+import { pages } from "../../constants/navigation";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
-interface DesktopNavProps {
-  language: Language;
-}
-
-const DesktopNav: React.FC<DesktopNavProps> = ({ language }) => {
+const DesktopNav = () => {
+  const { t } = useTranslation();
   const theme = useTheme();
 
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+    <Grid container>
       {pages.map((page) => (
-        <Link
-          to={`/${page.toLowerCase().replace(/\s+/g, "-")}`}
-          key={page}
-          style={{ textDecoration: "none" }}
-        >
+        <Link to={page.path} key={page.path} style={{ textDecoration: "none" }}>
           <Button
             sx={{
               my: theme.spacing(2),
-              mx: theme.spacing(1),
+              // mx: theme.spacing(1),
               color: theme.palette.primary.contrastText,
               display: "block",
               "&:hover": {
@@ -30,11 +24,11 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ language }) => {
               },
             }}
           >
-            {getPageTranslation(page, language)}
+            {t(page.title)}
           </Button>
         </Link>
       ))}
-    </Box>
+    </Grid>
   );
 };
 

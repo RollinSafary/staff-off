@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import {
   Avatar,
   Box,
@@ -9,11 +9,11 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { useLanguage } from "../../theme/LanguageContext";
-import { settings, getPageTranslation } from "../../mock/navigation";
+import { settings } from "../../constants/navigation";
+import { useTranslation } from "react-i18next";
 
 const UserMenu: React.FC = () => {
-  const { language } = useLanguage();
+  const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const theme = useTheme();
 
@@ -50,9 +50,7 @@ const UserMenu: React.FC = () => {
       >
         {settings.map((setting) => (
           <MenuItem key={setting} onClick={handleCloseUserMenu}>
-            <Typography textAlign="center">
-              {getPageTranslation(setting, language)}
-            </Typography>
+            <Typography textAlign="center">{t(setting)}</Typography>
           </MenuItem>
         ))}
       </Menu>
