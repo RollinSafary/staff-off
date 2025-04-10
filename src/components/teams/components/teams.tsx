@@ -5,8 +5,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Box } from "@mui/material";
-
+import { useTranslation } from "react-i18next";
+import { Translations } from "@/constants/translations";
 const createData = (
   name: string,
   manager: string,
@@ -28,19 +28,29 @@ const rows = [
 ];
 
 const TeamDirectory = () => {
+  const { t } = useTranslation();
+
   return (
     <TableContainer component={Paper}>
       <header>
-        <h1>Teams/Departments</h1>
+        <h1>{t(Translations.PAGE_TEAMS_TITLE)}</h1>
       </header>
       <section>
         <Table sx={{ minWidth: 350 }} aria-label="Teams and Departments table">
           <TableHead>
             <TableRow>
-              <TableCell align="left">Name</TableCell>
-              <TableCell align="left">Manager</TableCell>
-              <TableCell align="left">Members</TableCell>
-              <TableCell align="left">Created/Last Modified</TableCell>
+              <TableCell align="left">
+                {t(Translations.PAGE_TEAMS_NAME)}
+              </TableCell>
+              <TableCell align="left">
+                {t(Translations.PAGE_TEAMS_MANAGER)}
+              </TableCell>
+              <TableCell align="left">
+                {t(Translations.PAGE_TEAMS_MEMBERS)}
+              </TableCell>
+              <TableCell align="left">
+                {t(Translations.PAGE_TEAMS_CHANGES)}
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -58,9 +68,6 @@ const TeamDirectory = () => {
           </TableBody>
         </Table>
       </section>
-      <footer>
-        <p>Total Teams: {rows.length}</p>
-      </footer>
     </TableContainer>
   );
 };
