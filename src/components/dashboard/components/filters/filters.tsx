@@ -46,19 +46,19 @@ const CalendarOptions = () => {
         </DialogTitle>
         <DialogContent>
           <MultiSelectAutocomplete
-            label="page.dashboard.filter.location"
+            label={Translations.PAGE_DASHBOARD_FILTER_LOCATION}
             options={locations}
             value={location}
             onChange={setLocation}
           />
           <MultiSelectAutocomplete
-            label="page.dashboard.filter.team"
+            label={Translations.PAGE_DASHBOARD_FILTER_TEAM}
             options={teams}
             value={team}
             onChange={setTeam}
           />
           <MultiSelectAutocomplete
-            label="page.dashboard.filter.leave-types"
+            label={Translations.PAGE_DASHBOARD_FILTER_LEAVE_TYPES}
             options={leaveTypes}
             value={leaveType}
             onChange={setLeaveType}
