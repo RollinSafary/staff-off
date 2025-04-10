@@ -1,5 +1,5 @@
-import React, { createContext, useContext, ReactNode } from 'react';
-import { useTheme, useMediaQuery } from '@mui/material';
+import React, { createContext, useContext, ReactNode } from "react";
+import { useTheme, useMediaQuery } from "@mui/material";
 
 // Define the type for our responsive context
 interface ResponsiveContextType {
@@ -18,14 +18,16 @@ const ResponsiveContext = createContext<ResponsiveContextType>({
 });
 
 // Create a provider component
-export const ResponsiveProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ResponsiveProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const theme = useTheme();
 
   // Define common responsive breakpoints
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-  const isDesktop = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-  const isLargeDesktop = useMediaQuery(theme.breakpoints.up('lg'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md"));
+  const isDesktop = useMediaQuery(theme.breakpoints.between("md", "lg"));
+  const isLargeDesktop = useMediaQuery(theme.breakpoints.up("lg"));
 
   // Memoize the context value to prevent unnecessary re-renders
   const contextValue = React.useMemo(
@@ -35,10 +37,14 @@ export const ResponsiveProvider: React.FC<{ children: ReactNode }> = ({ children
       isDesktop,
       isLargeDesktop,
     }),
-    [isMobile, isTablet, isDesktop, isLargeDesktop]
+    [isMobile, isTablet, isDesktop, isLargeDesktop],
   );
 
-  return <ResponsiveContext.Provider value={contextValue}>{children}</ResponsiveContext.Provider>;
+  return (
+    <ResponsiveContext.Provider value={contextValue}>
+      {children}
+    </ResponsiveContext.Provider>
+  );
 };
 
 // Custom hook to use the responsive context
@@ -95,7 +101,7 @@ export const ResponsiveGrid: React.FC<ResponsiveGridProps> = ({
   return (
     <div
       style={{
-        display: 'grid',
+        display: "grid",
         gridGap: `${(isMobile ? spacing.xs : spacing.md) || 1}rem`,
         // Add more responsive styling as needed
         ...props,

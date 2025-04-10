@@ -1,8 +1,16 @@
-import { createContext, useContext, useState, useMemo, useEffect } from 'react';
-import i18n from '../i18n';
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useEffect,
+  PropsWithChildren,
+  useLayoutEffect,
+} from "react";
+import i18n from "../i18n";
 
 // Supported languages
-export type Language = 'en' | 'ru';
+export type Language = "en" | "ru";
 
 interface LanguageContextType {
   language: Language;
@@ -11,7 +19,7 @@ interface LanguageContextType {
 
 // Create the context
 const LanguageContext = createContext<LanguageContextType>({
-  language: 'en',
+  language: "en",
   setLanguage: () => {},
 });
 
@@ -19,51 +27,49 @@ const LanguageContext = createContext<LanguageContextType>({
 export const useLanguage = () => useContext(LanguageContext);
 
 // Storage key for saved language preference
-const LANGUAGE_STORAGE_KEY = 'app-language';
+const LANGUAGE_STORAGE_KEY = "app-language";
 
-interface LanguageProviderProps {
-  children: React.ReactNode;
+interface LanguageProviderProps extends PropsWithChildren {
   defaultLanguage?: Language;
 }
 
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({
+export const LanguageProvider = ({
   children,
-  defaultLanguage = 'en',
-}) => {
+  defaultLanguage = "en",
+}: LanguageProviderProps) => {
   // Determine initial language from URL or storage
   const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window !== 'undefined') {
-      // Check URL path first
-      const pathLang = window.location.pathname.startsWith('/ru') ? 'ru' : null;
+    // Check URL path first
+    const pathLang = window.location.pathname.startsWith("/ru") ? "ru" : null;
 
-      // Then check localStorage
-      const savedLang = localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language | null;
+    // Then check localStorage
+    const savedLang = localStorage.getItem(
+      LANGUAGE_STORAGE_KEY,
+    ) as Language | null;
 
-      // Return the determined language
-      return pathLang || savedLang || defaultLanguage;
-    }
-    return defaultLanguage;
+    // Return the determined language
+    return pathLang || savedLang || defaultLanguage;
   });
 
   // Synchronize URL with language on initial load
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
+  useLayoutEffect(() => {
+    if (typeof window !== "undefined") {
       const currentPath = window.location.pathname;
-      const hasRuPrefix = currentPath.startsWith('/ru');
+      const hasRuPrefix = currentPath.startsWith("/ru");
 
       // If language is Russian but URL doesn't have /ru prefix, update the URL
-      if (language === 'ru' && !hasRuPrefix) {
-        const newPath = `/ru${currentPath === '/' ? '' : currentPath}`;
-        window.history.replaceState({}, '', newPath);
+      if (language === "ru" && !hasRuPrefix) {
+        const newPath = `/ru${currentPath === "/" ? "" : currentPath}`;
+        window.history.replaceState({}, "", newPath);
       }
 
       // If language is English but URL has /ru prefix, update the URL (edge case)
-      if (language === 'en' && hasRuPrefix) {
-        const newPath = currentPath.replace(/^\/ru/, '') || '/';
-        window.history.replaceState({}, '', newPath);
+      if (language === "en" && hasRuPrefix) {
+        const newPath = currentPath.replace(/^\/ru/, "") || "/";
+        window.history.replaceState({}, "", newPath);
       }
     }
-  }, []); // Run only once on initial load
+  }, [language]); // Run only once on initial load
 
   // Handle language change
   const setLanguage = (lang: Language) => {
@@ -77,18 +83,18 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     // Update URL to reflect language change
     const currentPath = window.location.pathname;
     const newPath =
-      lang === 'en'
-        ? currentPath.replace(/^\/ru/, '') || '/'
-        : currentPath.startsWith('/ru')
+      lang === "en"
+        ? currentPath.replace(/^\/ru/, "") || "/"
+        : currentPath.startsWith("/ru")
           ? currentPath
-          : `/ru${currentPath === '/' ? '' : currentPath}`;
+          : `/ru${currentPath === "/" ? "" : currentPath}`;
 
-    window.history.pushState({}, '', newPath);
+    window.history.pushState({}, "", newPath);
   };
 
   // Save language preference when it changes
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
     }
   }, [language]);
@@ -96,13 +102,13 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
   // Sync with i18next language changes
   useEffect(() => {
     const handleLanguageChanged = (lng: string) => {
-      if (lng && lng !== language && (lng === 'en' || lng === 'ru')) {
+      if (lng && lng !== language && (lng === "en" || lng === "ru")) {
         setLanguageState(lng as Language);
       }
     };
 
     // Listen for language changes from i18next
-    i18n.on('languageChanged', handleLanguageChanged);
+    i18n.on("languageChanged", handleLanguageChanged);
 
     // Set initial i18next language if needed
     if (i18n.language !== language) {
@@ -110,7 +116,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
     }
 
     return () => {
-      i18n.off('languageChanged', handleLanguageChanged);
+      i18n.off("languageChanged", handleLanguageChanged);
     };
   }, [language]);
 
@@ -120,10 +126,14 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       language,
       setLanguage,
     }),
-    [language]
+    [language],
   );
 
-  return <LanguageContext.Provider value={contextValue}>{children}</LanguageContext.Provider>;
+  return (
+    <LanguageContext.Provider value={contextValue}>
+      {children}
+    </LanguageContext.Provider>
+  );
 };
 
 export default LanguageProvider;

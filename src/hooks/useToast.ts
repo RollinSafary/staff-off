@@ -1,13 +1,17 @@
-import { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
-import { AlertProps } from '@mui/material';
-import { uiSlice } from '../redux-store/slices/ui';
-import { ToastState } from '../redux-store/types/ui';
+import { useCallback } from "react";
+import { useDispatch } from "react-redux";
+import { AlertProps } from "@mui/material";
+import { uiSlice } from "../redux-store/slices/ui";
+import { ToastState } from "../redux-store/types/ui";
 
-type ToastSeverity = AlertProps['severity'];
+type ToastSeverity = AlertProps["severity"];
 
 interface UseToastReturn {
-  showToast: (message: string, severity?: ToastSeverity, duration?: number) => void;
+  showToast: (
+    message: string,
+    severity?: ToastSeverity,
+    duration?: number,
+  ) => void;
   hideToast: () => void;
   clearToast: () => void;
   success: (message: string, duration?: number) => void;
@@ -24,7 +28,7 @@ export const useToast = (): UseToastReturn => {
   const dispatch = useDispatch();
 
   const showToast = useCallback(
-    (message: string, severity: ToastSeverity = 'info', duration?: number) => {
+    (message: string, severity: ToastSeverity = "info", duration?: number) => {
       const toastData: ToastState = {
         message,
         severity,
@@ -33,7 +37,7 @@ export const useToast = (): UseToastReturn => {
       };
       dispatch(uiSlice.actions.showToast(toastData));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const hideToast = useCallback(() => {
@@ -46,30 +50,30 @@ export const useToast = (): UseToastReturn => {
 
   const success = useCallback(
     (message: string, duration?: number) => {
-      showToast(message, 'success', duration);
+      showToast(message, "success", duration);
     },
-    [showToast]
+    [showToast],
   );
 
   const error = useCallback(
     (message: string, duration?: number) => {
-      showToast(message, 'error', duration);
+      showToast(message, "error", duration);
     },
-    [showToast]
+    [showToast],
   );
 
   const warning = useCallback(
     (message: string, duration?: number) => {
-      showToast(message, 'warning', duration);
+      showToast(message, "warning", duration);
     },
-    [showToast]
+    [showToast],
   );
 
   const info = useCallback(
     (message: string, duration?: number) => {
-      showToast(message, 'info', duration);
+      showToast(message, "info", duration);
     },
-    [showToast]
+    [showToast],
   );
 
   return {
