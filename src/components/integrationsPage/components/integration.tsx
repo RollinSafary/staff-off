@@ -3,33 +3,31 @@ import IntegrationHeader from "./integrationHeader";
 import IntegrationCard from "./card";
 import { useTranslation } from "react-i18next";
 import { Translations } from "@/constants/translations";
+const { t } = useTranslation();
 
+const integrations = [
+  {
+    title: "Google calendar",
+    description: t(Translations.PAGE_INTEGRATIONS_CARD_GOOGLE_CALENDAR),
+    img: "https://tracker.day-off.app/assets/img/apps/google_calendar.png",
+  },
+  {
+    title: "Slack",
+    description: t(Translations.PAGE_INTEGRATIONS_CARD_SLACK),
+    img: "https://tracker.day-off.app/assets/img/apps/slack.png",
+  },
+  {
+    title: "Outlook",
+    description: t(Translations.PAGE_INTEGRATIONS_CARD_OUTLOOK),
+    img: "https://tracker.day-off.app/assets/img/apps/outlook.png",
+  },
+  {
+    title: "Teams",
+    description: t(Translations.PAGE_INTEGRATIONS_CARD_TEAMS),
+    img: "https://tracker.day-off.app/assets/img/apps/teams.png",
+  },
+];
 const IntegrationComponent = () => {
-  const { t } = useTranslation();
-
-  const integrations = [
-    {
-      title: "Google calendar",
-      description: t(Translations.PAGE_INTEGRATIONS_CARD_GOOGLE_CALENDAR),
-      img: "https://tracker.day-off.app/assets/img/apps/google_calendar.png",
-    },
-    {
-      title: "Slack",
-      description: t(Translations.PAGE_INTEGRATIONS_CARD_SLACK),
-      img: "https://tracker.day-off.app/assets/img/apps/slack.png",
-    },
-    {
-      title: "Outlook",
-      description: t(Translations.PAGE_INTEGRATIONS_CARD_OUTLOOK),
-      img: "https://tracker.day-off.app/assets/img/apps/outlook.png",
-    },
-    {
-      title: "Teams",
-      description: t(Translations.PAGE_INTEGRATIONS_CARD_TEAMS),
-      img: "https://tracker.day-off.app/assets/img/apps/teams.png",
-    },
-  ];
-
   return (
     <Box>
       <IntegrationHeader />
