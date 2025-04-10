@@ -17,6 +17,18 @@
   "error.go-back": "Вернуться на главную",
   "error.not-found": "Страница не найдена",
   "error.not-found-description": "Страница, которую вы ищете, не существует.",
+  "page.reports.card.accruals-report": "Отчет о начислениях",
+  "page.reports.card.accruals.description": "Показывает детали баланса по типам отпусков с учётом накоплений.",
+  "page.reports.card.balances-report": "Отчет о балансах",
+  "page.reports.card.balances.description": " Показывает общий и использованный баланс по каждому типу отпуска.",
+  "page.reports.card.carry-report": "Отчёт о переносе",
+  "page.reports.card.carry.description": "Отображает детали перенесённого баланса за прошлый и текущий год.",
+  "page.reports.card.detailed-report": "Подробный отчет",
+  "page.reports.card.detailed.description": " Отображает сводку запросов сотрудников на отпуск.",
+  "page.reports.card.total-report": "Общий отчет",
+  "page.reports.card.total.description": "Показывает общий использованный баланс сотрудников.",
+  "page.reports.full-report": "Полный отчет",
+  "page.reports.title": "Отчеты",
   "toast.error": "Ошибка",
   "toast.error-example": "Это сообщение об ошибке!",
   "toast.examples-title": "Примеры уведомлений",
@@ -26,7 +38,5 @@
   "toast.success": "Успех",
   "toast.success-example": "Это сообщение об успехе!",
   "toast.warning": "Предупреждение",
-  "toast.warning-example": "Это предупреждающее сообщение!",
-  "full report": "полный отчет",
-  "reports": "Отчеты"
+  "toast.warning-example": "Это предупреждающее сообщение!"
 }
