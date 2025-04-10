@@ -1,35 +1,36 @@
-import React from "react";
 import ReportCard from "./components/ReportCard";
 import { Translations } from "@/constants/translations";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 const cardsData = [
   {
-    title: t(Translations.PAGE_REPORTS_CARD_BALANCES_REPORT),
+    title: Translations.PAGE_REPORTS_CARD_BALANCES_REPORT,
     image: "/static/images/cards/contemplative-reptile.jpg",
-    description: t(Translations.PAGE_REPORTS_CARD_BALANCES_DESCRIPTION),
+    description: Translations.PAGE_REPORTS_CARD_BALANCES_DESCRIPTION,
   },
   {
-    title: t(Translations.PAGE_REPORTS_CARD_DETAILED_REPORT),
+    title: Translations.PAGE_REPORTS_CARD_DETAILED_REPORT,
     image: "/static/images/cards/chameleon.jpg",
-    description: t(Translations.PAGE_REPORTS_CARD_DETAILED_DESCRIPTION),
+    description: Translations.PAGE_REPORTS_CARD_DETAILED_DESCRIPTION,
   },
   {
-    title: t(Translations.PAGE_REPORTS_CARD_TOTAL_REPORT),
+    title: Translations.PAGE_REPORTS_CARD_TOTAL_REPORT,
     image: "/static/images/cards/gecko.jpg",
-    description: t(Translations.PAGE_REPORTS_CARD_TOTAL_DESCRIPTION),
+    description: Translations.PAGE_REPORTS_CARD_TOTAL_DESCRIPTION,
   },
   {
-    title: t(Translations.PAGE_REPORTS_CARD_ACCRUALS_REPORT),
+    title: Translations.PAGE_REPORTS_CARD_ACCRUALS_REPORT,
     image: "/static/images/cards/iguana.jpg",
-    description: t(Translations.PAGE_REPORTS_CARD_ACCRUALS_DESCRIPTION),
+    description: Translations.PAGE_REPORTS_CARD_ACCRUALS_DESCRIPTION,
   },
   {
-    title: t(Translations.PAGE_REPORTS_CARD_CARRY_REPORT),
+    title: Translations.PAGE_REPORTS_CARD_CARRY_REPORT,
     image: "/static/images/cards/iguana.jpg",
-    description: t(Translations.PAGE_REPORTS_CARD_CARRY_DESCRIPTION),
+    description: Translations.PAGE_REPORTS_CARD_CARRY_DESCRIPTION,
   },
 ];
+
 const Reports = () => {
+  const { t } = useTranslation();
   return (
     <>
       <header>
@@ -46,8 +47,8 @@ const Reports = () => {
         {cardsData.map((card, index) => (
           <ReportCard
             key={index}
-            title={card.title}
-            description={card.description}
+            title={t(card.title)}
+            description={t(card.description)}
             image={card.image}
             showBadge={index >= cardsData.length - 2}
           />
