@@ -7,7 +7,7 @@ interface FilterButtonProps {
   onClick: () => void;
 }
 
-const FilterButton: React.FC<FilterButtonProps> = ({ onClick }) => {
+const FilterButton = ({ onClick }: FilterButtonProps) => {
   const { t } = useTranslation();
 
   return (

@@ -1,11 +1,10 @@
 import { Box, Container, Typography } from "@mui/material";
 import Navbar from "./navbar";
+import { PropsWithChildren } from "react";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
+interface LayoutProps extends PropsWithChildren {}
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Navbar />

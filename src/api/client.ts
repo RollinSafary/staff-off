@@ -1,7 +1,7 @@
-import { ApiStructure } from './types';
-import realApi from './index';
-import mockApi from './mockApi';
-import { logNotification } from '../helpers/logger';
+import { ApiStructure } from "./types";
+import realApi from "./index";
+import mockApi from "./mockApi";
+import { logNotification } from "../helpers/logger";
 
 /**
  * Configuration for API client
@@ -19,7 +19,7 @@ interface ApiConfig {
  */
 const defaultConfig: ApiConfig = {
   // Use mock API in development by default
-  useMockApi: process.env.NODE_ENV !== 'production',
+  useMockApi: process.env.NODE_ENV !== "production",
 };
 
 /**
@@ -31,12 +31,12 @@ const defaultConfig: ApiConfig = {
 export function getApiClient(config: ApiConfig = defaultConfig): ApiStructure {
   // Use mock API if explicitly configured or in development mode
   if (config.useMockApi) {
-    logNotification('Using mock API implementation');
+    logNotification("Using mock API implementation");
     return mockApi;
   }
 
   // Use real API implementation
-  logNotification('Using real API implementation');
+  logNotification("Using real API implementation");
   return realApi;
 }
 
@@ -47,4 +47,4 @@ const api = getApiClient();
 export default api;
 
 // Re-export all types
-export * from './types';
+export * from "./types";

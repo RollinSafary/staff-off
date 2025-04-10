@@ -4,7 +4,6 @@ import { Translations } from "./translations";
 export interface INavigationDetails {
   title: string;
   path: string;
-  callback?: Function;
 }
 
 export enum NavigationPath {

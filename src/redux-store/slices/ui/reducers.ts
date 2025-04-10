@@ -1,8 +1,10 @@
-import { type SliceCaseReducers } from '@reduxjs/toolkit';
-import { IAction } from '../../store';
-import { IUISliceState, ToastState, ThemeMode } from '../../types/ui';
+import { type SliceCaseReducers } from "@reduxjs/toolkit";
+import { IAction } from "../../store";
+import { IUISliceState, ToastState, ThemeMode } from "../../types/ui";
 
-const createReducer = <T extends SliceCaseReducers<IUISliceState>>(reducer: T) => ({ ...reducer });
+const createReducer = <T extends SliceCaseReducers<IUISliceState>>(
+  reducer: T,
+) => ({ ...reducer });
 
 const reducers = createReducer({
   setIsMenuOpen(state: IUISliceState, action: IAction<boolean>) {
@@ -29,15 +31,15 @@ const reducers = createReducer({
   setThemeMode(state: IUISliceState, action: IAction<ThemeMode>) {
     state.themeMode = action.payload;
     // Save to localStorage when theme changes
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('themeMode', action.payload);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("themeMode", action.payload);
     }
   },
   toggleThemeMode(state: IUISliceState) {
-    state.themeMode = state.themeMode === 'light' ? 'dark' : 'light';
+    state.themeMode = state.themeMode === "light" ? "dark" : "light";
     // Save to localStorage when theme changes
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('themeMode', state.themeMode);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("themeMode", state.themeMode);
     }
   },
 });

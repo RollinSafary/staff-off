@@ -8,10 +8,10 @@ interface DialogActionButtonsProps {
   onSave: () => void;
 }
 
-const DialogActionButtons: React.FC<DialogActionButtonsProps> = ({
+const DialogActionButtons = ({
   onCancel,
   onSave,
-}) => {
+}: DialogActionButtonsProps) => {
   const { t } = useTranslation();
 
   return (

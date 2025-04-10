@@ -1,31 +1,16 @@
-import { AppBar, Container, Toolbar, Box, Grid } from "@mui/material";
+import { AppBar, Container, Toolbar, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { useLanguage } from "../../theme/LanguageContext";
-import { useNavigate } from "react-router-dom";
 
 import MobileMenu from "./MobileMenu";
 import DesktopNav from "./DesktopNav";
 import LanguageSwitcher from "./LanguageSwitcher";
 import ThemeToggle from "./ThemeToggle";
 import UserMenu from "./UserMenu";
-import LogoSvg from "../../assets/main/logo.svg";
 import { useResponsive } from "@/hooks/useResponsive";
 
 const Navbar = () => {
-  const { language } = useLanguage();
   const theme = useTheme();
-  const navigate = useNavigate();
   const { isDesktop } = useResponsive();
-
-  // Function to get the root URL based on the current language
-  const getRootUrl = () => {
-    return language === "en" ? "/" : "/ru";
-  };
-
-  // Handle logo click
-  const handleLogoClick = () => {
-    navigate(getRootUrl());
-  };
 
   return (
     <AppBar

@@ -1,4 +1,4 @@
-import { Language } from '../theme/LanguageContext';
+import { Language } from "../theme/LanguageContext";
 
 // Language options configuration
 export const languageOptions: {
@@ -7,13 +7,13 @@ export const languageOptions: {
   flagUrl: string;
 }[] = [
   {
-    code: 'en',
-    label: 'English',
-    flagUrl: 'https://flagcdn.com/w40/gb.png',
+    code: "en",
+    label: "English",
+    flagUrl: "https://flagcdn.com/w40/gb.png",
   },
   {
-    code: 'ru',
-    label: 'Русский',
-    flagUrl: 'https://flagcdn.com/w40/ru.png',
+    code: "ru",
+    label: "Русский",
+    flagUrl: "https://flagcdn.com/w40/ru.png",
   },
 ];

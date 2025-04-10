@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
+import React from "react";
+import { Box, Typography } from "@mui/material";
 
 // Example of how to import an SVG file:
 // import { ReactComponent as Logo } from '../assets/logo.svg';
@@ -10,14 +10,16 @@ const SvgExample: React.FC = () => {
   return (
     <Box sx={{ padding: 2 }}>
       <Typography variant="h6">SVG Import Example</Typography>
-      <Typography variant="body1">To use an SVG as a React component:</Typography>
+      <Typography variant="body1">
+        To use an SVG as a React component:
+      </Typography>
       <Box
         component="pre"
         sx={{
-          bgcolor: 'background.paper',
+          bgcolor: "background.paper",
           p: 2,
           borderRadius: 1,
-          overflow: 'auto',
+          overflow: "auto",
         }}
       >
         {`
@@ -34,10 +36,10 @@ import { ReactComponent as Logo } from '../path/to/logo.svg';
       <Box
         component="pre"
         sx={{
-          bgcolor: 'background.paper',
+          bgcolor: "background.paper",
           p: 2,
           borderRadius: 1,
-          overflow: 'auto',
+          overflow: "auto",
         }}
       >
         {`

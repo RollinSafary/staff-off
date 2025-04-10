@@ -7,9 +7,9 @@ interface LanguageFlagProps {
   size?: number;
 }
 
-const LanguageFlag: React.FC<LanguageFlagProps> = ({ language, size = 20 }) => {
+const LanguageFlag = ({ language, size = 20 }: LanguageFlagProps) => {
   const flagUrl = languageOptions.find(
-    (option) => option.code === language
+    (option) => option.code === language,
   )?.flagUrl;
 
   return (

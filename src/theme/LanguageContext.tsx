@@ -1,4 +1,12 @@
-import { createContext, useContext, useState, useMemo, useEffect } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useEffect,
+  PropsWithChildren,
+  useLayoutEffect,
+} from "react";
 import i18n from "../i18n";
 
 // Supported languages
@@ -21,34 +29,30 @@ export const useLanguage = () => useContext(LanguageContext);
 // Storage key for saved language preference
 const LANGUAGE_STORAGE_KEY = "app-language";
 
-interface LanguageProviderProps {
-  children: React.ReactNode;
+interface LanguageProviderProps extends PropsWithChildren {
   defaultLanguage?: Language;
 }
 
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({
+export const LanguageProvider = ({
   children,
   defaultLanguage = "en",
-}) => {
+}: LanguageProviderProps) => {
   // Determine initial language from URL or storage
   const [language, setLanguageState] = useState<Language>(() => {
-    if (typeof window !== "undefined") {
-      // Check URL path first
-      const pathLang = window.location.pathname.startsWith("/ru") ? "ru" : null;
+    // Check URL path first
+    const pathLang = window.location.pathname.startsWith("/ru") ? "ru" : null;
 
-      // Then check localStorage
-      const savedLang = localStorage.getItem(
-        LANGUAGE_STORAGE_KEY
-      ) as Language | null;
+    // Then check localStorage
+    const savedLang = localStorage.getItem(
+      LANGUAGE_STORAGE_KEY,
+    ) as Language | null;
 
-      // Return the determined language
-      return pathLang || savedLang || defaultLanguage;
-    }
-    return defaultLanguage;
+    // Return the determined language
+    return pathLang || savedLang || defaultLanguage;
   });
 
   // Synchronize URL with language on initial load
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window !== "undefined") {
       const currentPath = window.location.pathname;
       const hasRuPrefix = currentPath.startsWith("/ru");
@@ -65,7 +69,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
         window.history.replaceState({}, "", newPath);
       }
     }
-  }, []); // Run only once on initial load
+  }, [language]); // Run only once on initial load
 
   // Handle language change
   const setLanguage = (lang: Language) => {
@@ -122,7 +126,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({
       language,
       setLanguage,
     }),
-    [language]
+    [language],
   );
 
   return (

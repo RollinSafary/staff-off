@@ -1,6 +1,4 @@
-import FullCalendar from "@fullcalendar/react";
-import { CalendarOptions } from "fullcalendar";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const CalendarStyles = createGlobalStyle`
   @media (max-width: 1025px) {

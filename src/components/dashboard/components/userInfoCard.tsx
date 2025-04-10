@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { Balance } from "@mui/icons-material";
 import { Translations } from "@/constants/translations";
 
 const UserInfoCard: React.FC = () => {

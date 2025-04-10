@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Typography, Box, Button, Stack } from "@mui/material";
-import { Translation, useTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import useToast from "../hooks/useToast";
 import { Translations } from "@/constants/translations";
 
