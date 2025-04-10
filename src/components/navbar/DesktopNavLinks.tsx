@@ -1,28 +1,25 @@
-import { Box, Button } from '@mui/material';
-import { Language } from '../../theme/LanguageContext';
-import { pages, getPageTranslation } from '../../mock/navigation';
+import { Box, Button } from "@mui/material";
+import { pages } from "../../constants/navigation";
+import { useTranslation } from "react-i18next";
 
-interface DesktopNavLinksProps {
-  language: Language;
-}
-
-const DesktopNavLinks: React.FC<DesktopNavLinksProps> = ({ language }) => {
+const DesktopNavLinks = () => {
+  const { t } = useTranslation();
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+    <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
       {pages.map((page) => (
         <Button
           key={page}
           sx={{
             my: 2,
-            color: 'white',
-            display: 'block',
+            color: "white",
+            display: "block",
             mx: 1,
-            '&:hover': {
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            "&:hover": {
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
             },
           }}
         >
-          {getPageTranslation(page, language)}
+          {t(page)}
         </Button>
       ))}
     </Box>

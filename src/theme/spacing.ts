@@ -5,7 +5,8 @@
 const BASE_SPACING = 8;
 
 // Spacing multiplier function
-export const createSpacing = () => (factor: number) => `${BASE_SPACING * factor}px`;
+export const createSpacing = () => (factor: number) =>
+  `${BASE_SPACING * factor}px`;
 
 // Common spacing values as an object for reference
 export const spacing = {

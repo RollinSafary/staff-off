@@ -88,10 +88,10 @@ export interface UpdateProfileRequest {
 /**
  * Data related types
  */
-export interface SaveDocumentRequest {
+export interface SaveDocumentRequest<D> {
   collection: string;
   id?: string;
-  data: Record<string, any>;
+  data: Record<string, D>;
 }
 
 export interface GetDocumentRequest {
@@ -104,18 +104,18 @@ export interface DeleteDocumentRequest {
   id: string;
 }
 
-export interface DocumentResponse {
+export interface DocumentResponse<D> {
   id: string;
-  data: Record<string, any>;
+  data: Record<string, D>;
   createdAt: string;
   updatedAt: string;
 }
 
-export interface ListDocumentsRequest {
+export interface ListDocumentsRequest<D> {
   collection: string;
-  filters?: Record<string, any>;
+  filters?: Record<string, D>;
   orderBy?: string;
-  orderDirection?: 'asc' | 'desc';
+  orderDirection?: "asc" | "desc";
   limit?: number;
   offset?: number;
 }

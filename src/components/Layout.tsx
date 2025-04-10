@@ -1,13 +1,12 @@
-import { Box, Container, Typography } from '@mui/material';
-import Navbar from './navbar';
+import { Box, Container, Typography } from "@mui/material";
+import Navbar from "./navbar";
+import { PropsWithChildren } from "react";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
+interface LayoutProps extends PropsWithChildren {}
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Navbar />
       <Container component="main" sx={{ flexGrow: 1, py: 4 }}>
         {children}
@@ -17,14 +16,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         sx={{
           py: 3,
           px: 2,
-          mt: 'auto',
+          mt: "auto",
           backgroundColor: (theme) =>
-            theme.palette.mode === 'light' ? theme.palette.grey[200] : theme.palette.grey[800],
+            theme.palette.mode === "light"
+              ? theme.palette.grey[200]
+              : theme.palette.grey[800],
         }}
       >
         <Container maxWidth="lg">
           <Typography variant="body2" color="text.secondary" align="center">
-            © {new Date().getFullYear()} Your Company Name
+            © {new Date().getFullYear()} Staff Off
           </Typography>
         </Container>
       </Box>

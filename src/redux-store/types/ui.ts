@@ -1,11 +1,11 @@
-import { AlertProps } from '@mui/material';
+import { AlertProps } from "@mui/material";
 
-export type ThemeMode = 'light' | 'dark';
+export type ThemeMode = "light" | "dark";
 
 export interface ToastState {
   open: boolean;
   message: string;
-  severity: AlertProps['severity'];
+  severity: AlertProps["severity"];
   autoHideDuration?: number;
 }
 

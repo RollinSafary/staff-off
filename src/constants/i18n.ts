@@ -6,12 +6,12 @@
  * The default language of the application.
  * This language doesn't have a path prefix (e.g., / instead of /en/)
  */
-export const DEFAULT_LANGUAGE = 'en';
+export const DEFAULT_LANGUAGE = "en";
 
 /**
  * The list of all supported languages
  */
-export const LANGUAGES = ['en', 'ru'];
+export const LANGUAGES = ["en", "ru"];
 
 /**
  * Regex pattern to match a valid language code in URL
@@ -44,7 +44,7 @@ export const extractLanguageFromPath = (path: string): string | null => {
  */
 export const createLocalizedPath = (path: string, language: string): string => {
   // Ensure path starts with a slash
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
 
   // For default language, no prefix is needed
   if (language === DEFAULT_LANGUAGE) {
@@ -59,5 +59,5 @@ export const createLocalizedPath = (path: string, language: string): string => {
  * Removes any language prefix from a path
  */
 export const removeLanguageFromPath = (path: string): string => {
-  return path.replace(LANG_PATH_REGEX, '/');
+  return path.replace(LANG_PATH_REGEX, "/");
 };

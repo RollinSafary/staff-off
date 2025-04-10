@@ -1,15 +1,15 @@
-import React from 'react';
-import { Container, Typography, Box, Button, Stack } from '@mui/material';
-import { useTranslation } from 'react-i18next';
-import useToast from '../hooks/useToast';
-import { Translations } from '../constants/translations';
+import React from "react";
+import { Container, Typography, Box, Button, Stack } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import useToast from "../hooks/useToast";
+import { Translations } from "@/constants/translations";
 
 function Home() {
   const { t } = useTranslation();
   const toast = useToast();
 
   const showSuccessToast = () => {
-    toast.success(t(Translations.TOAST_SUCCESS_EXAMPLE));
+    toast.success(t(Translations.TOAST_SUCCESS));
   };
 
   const showErrorToast = () => {
@@ -38,17 +38,25 @@ function Home() {
           {t(Translations.TOAST_EXAMPLES_TITLE)}
         </Typography>
         <Stack direction="row" spacing={2} sx={{ mb: 4 }}>
-          <Button variant="contained" color="success" onClick={showSuccessToast}>
-            {t(Translations.TOAST_SUCCESS)} {t(Translations.TOAST_LABEL)}
+          <Button
+            variant="contained"
+            color="success"
+            onClick={showSuccessToast}
+          >
+            {t(Translations.TOAST_SUCCESS)}
           </Button>
           <Button variant="contained" color="error" onClick={showErrorToast}>
-            {t(Translations.TOAST_ERROR)} {t(Translations.TOAST_LABEL)}
+            {t(Translations.TOAST_ERROR)}
           </Button>
-          <Button variant="contained" color="warning" onClick={showWarningToast}>
-            {t(Translations.TOAST_WARNING)} {t(Translations.TOAST_LABEL)}
+          <Button
+            variant="contained"
+            color="warning"
+            onClick={showWarningToast}
+          >
+            {t(Translations.TOAST_WARNING)}
           </Button>
           <Button variant="contained" color="info" onClick={showInfoToast}>
-            {t(Translations.TOAST_INFO)} {t(Translations.TOAST_LABEL)}
+            {t(Translations.TOAST_INFO)}
           </Button>
         </Stack>
       </Box>

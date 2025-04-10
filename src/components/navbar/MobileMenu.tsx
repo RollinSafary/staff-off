@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from "react";
 import {
   Box,
   IconButton,
@@ -9,17 +9,21 @@ import {
   ListItemText,
   Typography,
   Divider,
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import MenuIcon from '@mui/icons-material/Menu';
-import { useLanguage } from '../../theme/LanguageContext';
-import { pages, getPageTranslation } from '../../mock/navigation';
-import { languageOptions } from '../../mock/languages';
-import LanguageFlag from '../LanguageFlag';
+} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useLanguage } from "../../theme/LanguageContext";
+import { INavigationDetails, pages } from "../../constants/navigation";
+import { languageOptions } from "../../constants/languages";
+import LanguageFlag from "../LanguageFlag";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const MobileMenu: React.FC = () => {
-  const { language, setLanguage } = useLanguage();
+  const { t } = useTranslation();
+  const { setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const theme = useTheme();
 
   const handleOpen = () => {
@@ -30,10 +34,22 @@ const MobileMenu: React.FC = () => {
     setOpen(false);
   };
 
+  const onNavigationClick = useCallback(
+    (page: INavigationDetails) => {
+      navigate(page.path);
+    },
+    [navigate],
+  );
+
   return (
     <>
-      <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
-        <IconButton size="large" aria-label="menu" onClick={handleOpen} color="inherit">
+      <Box sx={{ flexGrow: 0, display: { xs: "flex" } }}>
+        <IconButton
+          size="large"
+          aria-label="menu"
+          onClick={handleOpen}
+          color="inherit"
+        >
           <MenuIcon />
         </IconButton>
       </Box>
@@ -60,9 +76,9 @@ const MobileMenu: React.FC = () => {
           <Divider />
           <List>
             {pages.map((page) => (
-              <ListItem key={page} disablePadding>
-                <ListItemButton>
-                  <ListItemText primary={getPageTranslation(page, language)} />
+              <ListItem key={page.path} disablePadding>
+                <ListItemButton onClick={() => onNavigationClick(page)}>
+                  <ListItemText primary={t(page.title)} />
                 </ListItemButton>
               </ListItem>
             ))}
