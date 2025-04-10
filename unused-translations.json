@@ -9,5 +9,6 @@
   "common.dark": "Dark",
   "common.light": "Light",
   "common.settings": "Settings",
-  "common.theme": "Theme"
+  "common.theme": "Theme",
+  "page.integration.card.add-button": "Add integration"
 }
