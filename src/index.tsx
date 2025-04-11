@@ -17,5 +17,5 @@ root.render(
       <CssBaseline />
       <AppRouter />
     </ThemeProvider>
-  </Provider>
+  </Provider>,
 );

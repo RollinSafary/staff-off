@@ -2,11 +2,12 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "./App";
 import { DEFAULT_LANGUAGE } from "./constants/i18n";
 import Integration from "./pages/IntegrationPage";
+import DashboardPage from "./pages/DashboardPage";
+import Home from "./pages/Home";
+import { NavigationPath } from "./constants/navigation";
+import PermissionPage from "./pages/PermissionPage";
+import ReportsPage from "./pages/ReportsPage";
 
-/**
- * Main router component that handles all application routes
- * with proper language path support.
- */
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -23,6 +24,19 @@ const AppRouter = () => {
           path="*"
           element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />}
         />
+        <Route path="/" element={<App />}>
+          <Route index element={<Home />} />
+          <Route path={NavigationPath.dashboard} element={<DashboardPage />} />
+          <Route path={NavigationPath.reports} element={<ReportsPage />} />
+          <Route
+            path={NavigationPath.permissions}
+            element={<PermissionPage />}
+          />
+          <Route
+            path="*"
+            element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />}
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

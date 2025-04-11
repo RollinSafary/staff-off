@@ -1,2 +1,2 @@
-export { default } from './ToastNotification';
-export * from './ToastNotification';
+export { default } from "./ToastNotification";
+export * from "./ToastNotification";

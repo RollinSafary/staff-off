@@ -1,10 +1,16 @@
-import { useState } from 'react';
-import { Box, Button, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import { Language, useLanguage } from '../../theme/LanguageContext';
-import LanguageFlag from '../LanguageFlag';
-import { languageOptions } from '../../mock/languages';
-import { getTranslation } from '../../mock/translations';
+import { useState } from "react";
+import {
+  Box,
+  Button,
+  Menu,
+  MenuItem,
+  Tooltip,
+  Typography,
+} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { Language, useLanguage } from "../../theme/LanguageContext";
+import LanguageFlag from "../LanguageFlag";
+import { languageOptions } from "../../constants/languages";
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
@@ -25,17 +31,19 @@ const LanguageSwitcher: React.FC = () => {
   };
 
   // Current language option
-  const currentLang = languageOptions.find((option) => option.code === language);
+  const currentLang = languageOptions.find(
+    (option) => option.code === language,
+  );
 
   return (
     <Box sx={{ flexGrow: 0, ml: theme.spacing(1) }}>
-      <Tooltip title={getTranslation('changeLanguage', language)}>
+      <Tooltip title="Change language">
         <Button
           onClick={handleOpenMenu}
           color="inherit"
           sx={{
-            textTransform: 'none',
-            minWidth: 'auto',
+            textTransform: "none",
+            minWidth: "auto",
             padding: theme.spacing(0.75),
           }}
           startIcon={<LanguageFlag language={language} />}
@@ -48,13 +56,13 @@ const LanguageSwitcher: React.FC = () => {
         id="menu-appbar-language"
         anchorEl={anchorEl}
         anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         keepMounted
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
+          vertical: "top",
+          horizontal: "right",
         }}
         open={Boolean(anchorEl)}
         onClose={handleCloseMenu}
@@ -65,7 +73,7 @@ const LanguageSwitcher: React.FC = () => {
             onClick={() => handleLanguageChange(option.code)}
             selected={option.code === language}
           >
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <Box sx={{ mr: theme.spacing(1) }}>
                 <LanguageFlag language={option.code} />
               </Box>

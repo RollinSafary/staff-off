@@ -14,7 +14,6 @@ const LANGUAGE_STORAGE_KEY = "app-language";
 // Custom path-based language detector
 const pathDetector = {
   name: "path",
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   lookup(_options: unknown) {
     // Check if we're in a browser environment
     if (typeof window !== "undefined") {

@@ -9,7 +9,7 @@ function Home() {
   const toast = useToast();
 
   const showSuccessToast = () => {
-    toast.success(t(Translations.TOAST_SUCCESS_EXAMPLE));
+    toast.success(t(Translations.TOAST_SUCCESS));
   };
 
   const showErrorToast = () => {
@@ -43,20 +43,20 @@ function Home() {
             color="success"
             onClick={showSuccessToast}
           >
-            {t(Translations.TOAST_SUCCESS)} {t(Translations.TOAST_LABEL)}
+            {t(Translations.TOAST_SUCCESS)}
           </Button>
           <Button variant="contained" color="error" onClick={showErrorToast}>
-            {t(Translations.TOAST_ERROR)} {t(Translations.TOAST_LABEL)}
+            {t(Translations.TOAST_ERROR)}
           </Button>
           <Button
             variant="contained"
             color="warning"
             onClick={showWarningToast}
           >
-            {t(Translations.TOAST_WARNING)} {t(Translations.TOAST_LABEL)}
+            {t(Translations.TOAST_WARNING)}
           </Button>
           <Button variant="contained" color="info" onClick={showInfoToast}>
-            {t(Translations.TOAST_INFO)} {t(Translations.TOAST_LABEL)}
+            {t(Translations.TOAST_INFO)}
           </Button>
         </Stack>
       </Box>

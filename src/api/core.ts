@@ -1,7 +1,7 @@
-import { httpsCallable } from 'firebase/functions';
-import { functions } from '../firebase/config';
-import { Endpoint } from './types';
-import { logCall, logResponse, logReject } from '../helpers/logger';
+import { httpsCallable } from "firebase/functions";
+import { functions } from "../firebase/config";
+import { Endpoint } from "./types";
+import { logCall, logResponse, logReject } from "../helpers/logger";
 
 /**
  * Creates a typed endpoint for a Firebase Cloud Function
@@ -10,7 +10,7 @@ import { logCall, logResponse, logReject } from '../helpers/logger';
  * @returns A typed function that calls the cloud function
  */
 export function createEndpoint<TRequest, TResponse>(
-  functionName: string
+  functionName: string,
 ): Endpoint<TRequest, TResponse> {
   // Create the endpoint function
   const endpoint = async (data?: TRequest): Promise<TResponse> => {
@@ -19,14 +19,17 @@ export function createEndpoint<TRequest, TResponse>(
 
     try {
       if (!functions) {
-        throw new Error('Firebase functions not initialized');
+        throw new Error("Firebase functions not initialized");
       }
 
       // Log the API call
       logCall(`API Call: ${functionName}`, data || {});
 
       // Call the Firebase function
-      const cloudFunction = httpsCallable<TRequest | undefined, TResponse>(functions, functionName);
+      const cloudFunction = httpsCallable<TRequest | undefined, TResponse>(
+        functions,
+        functionName,
+      );
       const result = await cloudFunction(data);
 
       // Calculate duration
@@ -62,7 +65,7 @@ export function createEndpoint<TRequest, TResponse>(
  */
 export function createMockEndpoint<TRequest, TResponse>(
   functionName: string,
-  mockImplementation: (data?: TRequest) => Promise<TResponse>
+  mockImplementation: (data?: TRequest) => Promise<TResponse>,
 ): Endpoint<TRequest, TResponse> {
   const endpoint = async (data?: TRequest): Promise<TResponse> => {
     // Record start time for performance measurement

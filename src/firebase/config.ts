@@ -1,14 +1,19 @@
-import { initializeApp, getApps, FirebaseOptions, FirebaseApp } from 'firebase/app';
-import { getAuth, Auth } from 'firebase/auth';
-import { getFirestore, Firestore } from 'firebase/firestore';
-import { getFunctions, Functions } from 'firebase/functions';
+import {
+  initializeApp,
+  getApps,
+  FirebaseOptions,
+  FirebaseApp,
+} from "firebase/app";
+import { getAuth, Auth } from "firebase/auth";
+import { getFirestore, Firestore } from "firebase/firestore";
+import { getFunctions, Functions } from "firebase/functions";
 
 // Basic Firebase configuration
 const firebaseConfig: FirebaseOptions = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY || '',
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || '',
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || '',
-  appId: process.env.REACT_APP_FIREBASE_APP_ID || '',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY || "",
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN || "",
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID || "",
+  appId: process.env.REACT_APP_FIREBASE_APP_ID || "",
 };
 
 // Initialize these as null with proper types

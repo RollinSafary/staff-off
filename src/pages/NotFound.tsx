@@ -1,7 +1,7 @@
-import { Container, Typography, Box, Button } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { Translations } from '../constants/translations';
+import { Container, Typography, Box, Button } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { Translations } from "../constants/translations";
 
 function NotFound() {
   const { t } = useTranslation();
@@ -10,11 +10,11 @@ function NotFound() {
     <Container maxWidth="sm">
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '70vh',
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "70vh",
         }}
       >
         <Typography variant="h1" component="h1" gutterBottom>

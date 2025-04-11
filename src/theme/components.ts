@@ -1,7 +1,7 @@
 // Component customizations for consistency and readability
 // Focuses on comfortable padding and spacing
 
-import { Components, Theme } from '@mui/material';
+import { Components, Theme } from "@mui/material";
 
 export const getComponents = (theme: Theme): Components => ({
   MuiCssBaseline: {
@@ -10,12 +10,12 @@ export const getComponents = (theme: Theme): Components => ({
         backgroundColor: theme.palette.background.default,
         color: theme.palette.text.primary,
         // Improve font rendering
-        WebkitFontSmoothing: 'antialiased',
-        MozOsxFontSmoothing: 'grayscale',
+        WebkitFontSmoothing: "antialiased",
+        MozOsxFontSmoothing: "grayscale",
         // Ensure proper line height for overall content
         lineHeight: 1.6,
         // Enhanced color transitions
-        transition: 'background-color 0.5s ease, color 0.5s ease',
+        transition: "background-color 0.5s ease, color 0.5s ease",
       },
       // Transitions are now handled by GlobalStyles
     },
@@ -24,22 +24,22 @@ export const getComponents = (theme: Theme): Components => ({
     styleOverrides: {
       root: {
         borderRadius: 8,
-        padding: '8px 16px',
-        textTransform: 'none',
+        padding: "8px 16px",
+        textTransform: "none",
         // Add comfortable min-width for better UX
         minWidth: 64,
       },
       containedPrimary: {
-        '&:hover': {
+        "&:hover": {
           backgroundColor: theme.palette.primary.dark,
         },
       },
       sizeLarge: {
-        padding: '12px 24px',
-        fontSize: '1rem',
+        padding: "12px 24px",
+        fontSize: "1rem",
       },
       sizeSmall: {
-        padding: '6px 12px',
+        padding: "6px 12px",
       },
     },
     defaultProps: {
@@ -52,9 +52,9 @@ export const getComponents = (theme: Theme): Components => ({
         borderRadius: 12,
         padding: 0,
         boxShadow:
-          theme.palette.mode === 'light'
-            ? '0 2px 8px rgba(0, 0, 0, 0.08)'
-            : '0 2px 8px rgba(0, 0, 0, 0.25)',
+          theme.palette.mode === "light"
+            ? "0 2px 8px rgba(0, 0, 0, 0.08)"
+            : "0 2px 8px rgba(0, 0, 0, 0.25)",
       },
     },
   },
@@ -62,7 +62,7 @@ export const getComponents = (theme: Theme): Components => ({
     styleOverrides: {
       root: {
         padding: theme.spacing(3),
-        '&:last-child': {
+        "&:last-child": {
           paddingBottom: theme.spacing(3),
         },
       },
@@ -79,7 +79,7 @@ export const getComponents = (theme: Theme): Components => ({
     styleOverrides: {
       root: {
         padding: theme.spacing(1, 3, 3),
-        justifyContent: 'flex-end',
+        justifyContent: "flex-end",
       },
     },
   },
@@ -90,7 +90,7 @@ export const getComponents = (theme: Theme): Components => ({
       },
     },
     defaultProps: {
-      variant: 'outlined',
+      variant: "outlined",
       fullWidth: true,
     },
   },
@@ -98,28 +98,28 @@ export const getComponents = (theme: Theme): Components => ({
     styleOverrides: {
       root: {
         borderRadius: 8,
-        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+        "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
           borderColor: theme.palette.primary.main,
           borderWidth: 2,
         },
       },
       input: {
-        padding: '12px 16px',
+        padding: "12px 16px",
       },
     },
   },
   MuiInputLabel: {
     styleOverrides: {
       root: {
-        fontSize: '0.9rem',
-        '&.Mui-focused': {
+        fontSize: "0.9rem",
+        "&.Mui-focused": {
           color: theme.palette.primary.main,
         },
       },
       outlined: {
-        transform: 'translate(16px, 14px) scale(1)',
-        '&.MuiInputLabel-shrink': {
-          transform: 'translate(16px, -9px) scale(0.75)',
+        transform: "translate(16px, 14px) scale(1)",
+        "&.MuiInputLabel-shrink": {
+          transform: "translate(16px, -9px) scale(0.75)",
         },
       },
     },
@@ -128,8 +128,11 @@ export const getComponents = (theme: Theme): Components => ({
     styleOverrides: {
       root: {
         padding: theme.spacing(1),
-        color: theme.palette.mode === 'light' ? theme.palette.grey[400] : theme.palette.grey[600],
-        '&.Mui-checked': {
+        color:
+          theme.palette.mode === "light"
+            ? theme.palette.grey[400]
+            : theme.palette.grey[600],
+        "&.Mui-checked": {
           color: theme.palette.primary.main,
         },
       },
@@ -139,8 +142,11 @@ export const getComponents = (theme: Theme): Components => ({
     styleOverrides: {
       root: {
         padding: theme.spacing(1),
-        color: theme.palette.mode === 'light' ? theme.palette.grey[400] : theme.palette.grey[600],
-        '&.Mui-checked': {
+        color:
+          theme.palette.mode === "light"
+            ? theme.palette.grey[400]
+            : theme.palette.grey[600],
+        "&.Mui-checked": {
           color: theme.palette.primary.main,
         },
       },
@@ -149,23 +155,23 @@ export const getComponents = (theme: Theme): Components => ({
   MuiSwitch: {
     styleOverrides: {
       switchBase: {
-        '&.Mui-checked': {
+        "&.Mui-checked": {
           color: theme.palette.primary.main,
-          '& + .MuiSwitch-track': {
+          "& + .MuiSwitch-track": {
             backgroundColor: theme.palette.primary.main,
             opacity: 0.5,
           },
         },
       },
       thumb: {
-        boxShadow: 'none',
+        boxShadow: "none",
       },
     },
   },
   MuiTable: {
     styleOverrides: {
       root: {
-        tableLayout: 'fixed',
+        tableLayout: "fixed",
       },
     },
   },
@@ -178,21 +184,23 @@ export const getComponents = (theme: Theme): Components => ({
       head: {
         fontWeight: 600,
         backgroundColor:
-          theme.palette.mode === 'light' ? theme.palette.grey[50] : theme.palette.background.paper,
+          theme.palette.mode === "light"
+            ? theme.palette.grey[50]
+            : theme.palette.background.paper,
       },
     },
   },
   MuiTableRow: {
     styleOverrides: {
       root: {
-        '&:last-child td': {
+        "&:last-child td": {
           borderBottom: 0,
         },
-        '&:hover': {
+        "&:hover": {
           backgroundColor:
-            theme.palette.mode === 'light'
-              ? theme.palette.primary.light + '10' // Very light purple with opacity
-              : theme.palette.primary.dark + '10',
+            theme.palette.mode === "light"
+              ? theme.palette.primary.light + "10" // Very light purple with opacity
+              : theme.palette.primary.dark + "10",
         },
       },
     },
@@ -253,11 +261,11 @@ export const getComponents = (theme: Theme): Components => ({
   MuiTab: {
     styleOverrides: {
       root: {
-        textTransform: 'none',
+        textTransform: "none",
         fontWeight: 500,
         padding: theme.spacing(1.5, 2),
         minHeight: 48,
-        '&.Mui-selected': {
+        "&.Mui-selected": {
           color: theme.palette.primary.main,
         },
       },
