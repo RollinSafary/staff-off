@@ -3,7 +3,6 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
-import "./dashboard.css";
 import CalendarOptions from "./filters/filters";
 import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";

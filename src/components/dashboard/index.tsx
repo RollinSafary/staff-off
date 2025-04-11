@@ -2,7 +2,6 @@ import Calendar from "./components/Calendar";
 import RequestCards from "./components/requestCards";
 import UserInfoCard from "./components/userInfoCard";
 import PendingRequests from "./components/pendingRequests";
-import "./components/dashboard.css";
 import DashboardSection from "./components/Section";
 import LeftPart from "./components/LeftPart";
 
