@@ -1,9 +1,8 @@
 import { Box, Grid } from "@mui/material";
 import IntegrationHeader from "./integrationHeader";
 import IntegrationCard from "./card";
-import { useTranslation } from "react-i18next";
 import { Translations } from "@/constants/translations";
-const { t } = useTranslation();
+import { t } from "i18next";
 
 const integrations = [
   {

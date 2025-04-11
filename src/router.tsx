@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "./App";
 import { DEFAULT_LANGUAGE } from "./constants/i18n";
-import Integration from "./pages/IntegrationPage";
 import DashboardPage from "./pages/DashboardPage";
 import Home from "./pages/Home";
 import { NavigationPath } from "./constants/navigation";
 import PermissionPage from "./pages/PermissionPage";
 import ReportsPage from "./pages/ReportsPage";
+import IntegrationPage from "./pages/IntegrationPage";
 
 const AppRouter = () => {
   return (
@@ -17,13 +17,8 @@ const AppRouter = () => {
 
         {/* Language-specific routes */}
         <Route path="/:lang/*" element={<App />} />
-        <Route path="/integrations" element={<Integration />} />
 
-        {/* Fallback route */}
-        <Route
-          path="*"
-          element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />}
-        />
+        {/* Main app routes */}
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path={NavigationPath.dashboard} element={<DashboardPage />} />
@@ -31,6 +26,10 @@ const AppRouter = () => {
           <Route
             path={NavigationPath.permissions}
             element={<PermissionPage />}
+          />
+          <Route
+            path={NavigationPath.integrations}
+            element={<IntegrationPage />}
           />
           <Route
             path="*"

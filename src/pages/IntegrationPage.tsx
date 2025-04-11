@@ -1,6 +1,6 @@
-import Index from "@/components/integrationsPage";
+import IntegrationComponent from "@/components/integrationsPage/components/integration";
 
-const Integration = () => {
-  return <Index />;
+const IntegrationPage = () => {
+  return <IntegrationComponent />;
 };
-export default Integration;
+export default IntegrationPage;
