@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import { NavigationPath } from "./constants/navigation";
 import PermissionPage from "./pages/PermissionPage";
 import ReportsPage from "./pages/ReportsPage";
+import EmployeesPage from "./pages/EmployeesPage";
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
             path={NavigationPath.permissions}
             element={<PermissionPage />}
           />
+          <Route path={NavigationPath.employees} element={<EmployeesPage />} />
           <Route
             path="*"
             element={<Navigate to={`/${DEFAULT_LANGUAGE}`} replace />}
