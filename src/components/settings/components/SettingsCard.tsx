@@ -14,7 +14,7 @@ const SettingsCard = ({ title, description }: Props) => {
       <Card
         sx={{
           display: "flex",
-          alignItems: "center",
+          alignItems: "start",
           p: 2,
           borderRadius: 2,
           justifyContent: "space-between",
