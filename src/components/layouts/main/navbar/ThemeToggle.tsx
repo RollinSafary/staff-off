@@ -3,8 +3,8 @@ import { IconButton, Tooltip, Box, keyframes } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useDispatch, useSelector } from "react-redux";
-import { uiSlice } from "../../redux-store/slices/ui";
-import { RootState } from "../../redux-store/store";
+import { uiSlice } from "../../../../redux-store/slices/ui";
+import { RootState } from "../../../../redux-store/store";
 
 // Define keyframes for a more subtle ripple animation
 const rippleEffect = keyframes`

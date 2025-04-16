@@ -20,10 +20,10 @@ export enum NavigationPath {
 
 export const pages: INavigationDetails[] = [
   { title: Translations.NAVIGATION_DASHBOARD, path: NavigationPath.dashboard },
-  {
-    title: Translations.NAVIGATION_TEAM_OVERVIEW,
-    path: NavigationPath.teamOverview,
-  },
+  // {
+  //   title: Translations.NAVIGATION_TEAM_OVERVIEW,
+  //   path: NavigationPath.teamOverview,
+  // },
   { title: Translations.NAVIGATION_REPORTS, path: NavigationPath.reports },
   { title: Translations.NAVIGATION_EMPLOYEES, path: NavigationPath.employees },
   { title: Translations.NAVIGATION_TEAMS, path: NavigationPath.teams },

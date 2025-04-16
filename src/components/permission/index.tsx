@@ -6,7 +6,7 @@ import PermissionTableRow from "./components/PermissionTableRow";
 import { permissionGroupsList } from "./mock";
 import { useTranslation } from "react-i18next";
 
-export default function Permissions() {
+const PermissionsContent = () => {
   const { t } = useTranslation();
   return (
     <>
@@ -27,4 +27,6 @@ export default function Permissions() {
       </section>
     </>
   );
-}
+};
+
+export default PermissionsContent;

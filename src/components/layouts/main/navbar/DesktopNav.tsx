@@ -1,6 +1,6 @@
 import { Button, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { pages } from "../../constants/navigation";
+import { pages } from "../../../../constants/navigation";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 

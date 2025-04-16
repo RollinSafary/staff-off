@@ -4,7 +4,7 @@ import { PropsWithChildren } from "react";
 
 interface LayoutProps extends PropsWithChildren {}
 
-const Layout = ({ children }: LayoutProps) => {
+const MainLayout = ({ children }: LayoutProps) => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Navbar />
@@ -33,4 +33,4 @@ const Layout = ({ children }: LayoutProps) => {
   );
 };
 
-export default Layout;
+export default MainLayout;

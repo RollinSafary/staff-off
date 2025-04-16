@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material";
-import { pages } from "../../constants/navigation";
+import { pages } from "../../../../constants/navigation";
 import { useTranslation } from "react-i18next";
 
 const DesktopNavLinks = () => {
