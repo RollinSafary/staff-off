@@ -38,6 +38,7 @@
   "page.dashboard.week": "Неделя",
   "page.employees.header.add": "Добавить сотрудника",
   "page.employees.header.filter": "Показать фильтр",
+  "page.employees.header.filter.hide": "Скрыть фильтр",
   "page.employees.header.years.last": "Прошлый год",
   "page.employees.header.years.next": "Следующий год",
   "page.employees.header.years.this": "Текущий год",

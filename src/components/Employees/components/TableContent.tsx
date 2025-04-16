@@ -31,7 +31,7 @@ const TableContent = ({
     >
       <Table
         sx={{
-          "@media (max-width: 850px)": {
+          "@media (max-width: 1000px)": {
             maxHeight: "none",
             width: "1000px",
           },

@@ -1,11 +1,19 @@
-import { Box, Button, Card } from "@mui/material";
+import { useState } from "react";
+import { Box, Button, Card, Collapse } from "@mui/material";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import { Translations } from "@/constants/translations";
 import { useTranslation } from "react-i18next";
+import FilterCard from "./employeesFilter/FilterBox";
 
 const EmployeesHeader = () => {
   const { t } = useTranslation();
+  const [showFilters, setShowFilters] = useState(false);
+
+  const toggleFilters = () => {
+    setShowFilters((prev) => !prev);
+  };
+
   return (
     <header>
       <Box
@@ -29,7 +37,6 @@ const EmployeesHeader = () => {
         >
           <Card
             sx={{
-              backgroundColor: "white",
               boxShadow: 1,
               borderRadius: 1,
               display: "flex",
@@ -44,7 +51,6 @@ const EmployeesHeader = () => {
           </Card>
           <Card
             sx={{
-              backgroundColor: "white",
               boxShadow: 1,
               borderRadius: 1,
               display: "flex",
@@ -53,16 +59,21 @@ const EmployeesHeader = () => {
               p: 1,
             }}
           >
-            <Button startIcon={<FilterAltIcon />}>
-              {t(Translations.PAGE_EMPLOYEES_HEADER_FILTER)}
+            <Button startIcon={<FilterAltIcon />} onClick={toggleFilters}>
+              {showFilters
+                ? t(Translations.PAGE_EMPLOYEES_HEADER_FILTER_HIDE)
+                : t(Translations.PAGE_EMPLOYEES_HEADER_FILTER)}
             </Button>
             <Button startIcon={<PersonAddIcon />}>
-              {" "}
               {t(Translations.PAGE_EMPLOYEES_HEADER_ADD)}
             </Button>
           </Card>
         </Box>
       </Box>
+
+      <Collapse in={showFilters}>
+        <FilterCard />
+      </Collapse>
     </header>
   );
 };

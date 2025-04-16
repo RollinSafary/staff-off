@@ -40,6 +40,7 @@ export enum Translations {
   PAGE_DASHBOARD_WEEK = "page.dashboard.week",
   PAGE_EMPLOYEES_HEADER_ADD = "page.employees.header.add",
   PAGE_EMPLOYEES_HEADER_FILTER = "page.employees.header.filter",
+  PAGE_EMPLOYEES_HEADER_FILTER_HIDE = "page.employees.header.filter.hide",
   PAGE_EMPLOYEES_HEADER_YEARS_LAST = "page.employees.header.years.last",
   PAGE_EMPLOYEES_HEADER_YEARS_NEXT = "page.employees.header.years.next",
   PAGE_EMPLOYEES_HEADER_YEARS_THIS = "page.employees.header.years.this",
