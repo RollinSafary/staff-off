@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "./App";
 import { DEFAULT_LANGUAGE } from "./constants/i18n";
 import DashboardPage from "./pages/DashboardPage";
-import Home from "./pages/Home";
+import Home from "./pages/HomePage";
 import { NavigationPath } from "./constants/navigation";
 import PermissionPage from "./pages/PermissionPage";
 import ReportsPage from "./pages/ReportsPage";

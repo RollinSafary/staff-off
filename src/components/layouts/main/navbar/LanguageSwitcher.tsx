@@ -8,9 +8,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { Language, useLanguage } from "../../theme/LanguageContext";
-import LanguageFlag from "../LanguageFlag";
-import { languageOptions } from "../../constants/languages";
+import { Language, useLanguage } from "../../../../theme/LanguageContext";
+import LanguageFlag from "../../../LanguageFlag";
+import { languageOptions } from "../../../../constants/languages";
 
 const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
@@ -32,7 +32,7 @@ const LanguageSwitcher: React.FC = () => {
 
   // Current language option
   const currentLang = languageOptions.find(
-    (option) => option.code === language,
+    (option) => option.code === language
   );
 
   return (

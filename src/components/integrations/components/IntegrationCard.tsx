@@ -1,14 +1,15 @@
 import { Translations } from "@/constants/translations";
 import { Card, Typography, Button, Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { IIntegrationData } from "../types";
 
-interface IntegrationCardProps {
-  title: string;
-  description: string;
-  img: string;
-}
+interface IntegrationCardProps extends IIntegrationData {}
 
-const IntegrationCard = ({ title, description, img }: IntegrationCardProps) => {
+const IntegrationCard = ({
+  title,
+  description,
+  imageURL,
+}: IntegrationCardProps) => {
   const { t } = useTranslation();
 
   return (
@@ -25,7 +26,7 @@ const IntegrationCard = ({ title, description, img }: IntegrationCardProps) => {
       <Box sx={{ display: "flex", alignItems: "center", flex: 1 }}>
         <Box sx={{ mr: 2 }}>
           <img
-            src={img}
+            src={imageURL}
             style={{ width: "55px", height: "55px" }}
             alt={title}
           />
@@ -38,16 +39,16 @@ const IntegrationCard = ({ title, description, img }: IntegrationCardProps) => {
             color="primary"
             fontSize={18}
           >
-            {title}
+            {t(title)}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description}
+            {t(description)}
           </Typography>
         </Box>
       </Box>
 
       <Button variant="contained" sx={{ textTransform: "none", ml: 2 }}>
-        {t(Translations.PAGE_INTEGRATION_CARD_ADD_BUTTON)}
+        {t(Translations.PAGE_INTEGRATION_CARD_BUTTON_ADD)}
       </Button>
     </Card>
   );

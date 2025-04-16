@@ -1,6 +1,6 @@
-import IntegrationComponent from "@/components/integrationsPage/components/integration";
+import IntegrationContent from "@/components/integrations";
 
 const IntegrationPage = () => {
-  return <IntegrationComponent />;
+  return <IntegrationContent />;
 };
 export default IntegrationPage;

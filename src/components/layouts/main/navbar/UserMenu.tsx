@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { settings } from "../../constants/navigation";
+import { settings } from "../../../../constants/navigation";
 import { useTranslation } from "react-i18next";
 
 const UserMenu: React.FC = () => {
