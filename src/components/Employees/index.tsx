@@ -1,6 +1,6 @@
 import EmployeesHeader from "./components/EmployeesHeader";
 import EmployeesTable from "./components/EmployeesTable";
-const EmployeesComponent = () => {
+const EmployeesContent = () => {
   return (
     <>
       <EmployeesHeader />
@@ -8,4 +8,4 @@ const EmployeesComponent = () => {
     </>
   );
 };
-export default EmployeesComponent;
+export default EmployeesContent;

@@ -16,7 +16,7 @@ const FilterMultiSelect = ({ label, value, options, onChange }: Props) => (
       multiple
       options={options}
       value={value}
-      onChange={(_, newValue: string[]) => onChange(_, newValue)} // Обновил тип
+      onChange={(_, newValue: string[]) => onChange(_, newValue)}
       renderInput={(params) => <TextField {...params} label={label} />}
     />
   </Grid>

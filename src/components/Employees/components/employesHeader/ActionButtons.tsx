@@ -25,6 +25,8 @@ const ActionButtons: React.FC<ActionButtonsProps> = ({
         flexWrap: "wrap",
         gap: 1,
         p: 1,
+        justifyContent: "center",
+        width: "100%",
       }}
     >
       <Button startIcon={<FilterAltIcon />} onClick={toggleFilters}>

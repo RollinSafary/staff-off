@@ -1,3 +1,4 @@
 {
-  "page.employees.header.filter.hide": "Hide Filter"
+  "page.employees.filter.filter": "Filter",
+  "page.employees.filter.reset": "Reset"
 }

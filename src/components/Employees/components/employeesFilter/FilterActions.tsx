@@ -1,4 +1,6 @@
+import { Translations } from "@/constants/translations";
 import { Button, Grid } from "@mui/material";
+import { t } from "i18next";
 
 type Props = {
   onReset: () => void;
@@ -9,12 +11,12 @@ const FilterActions = ({ onReset }: Props) => (
     <Grid container spacing={2}>
       <Grid item>
         <Button variant="contained" color="primary">
-          Filter
+          {t(Translations.PAGE_EMPLOYEES_FILTER_FILTER)}
         </Button>
       </Grid>
       <Grid item>
         <Button variant="outlined" onClick={onReset}>
-          Reset
+          {t(Translations.PAGE_EMPLOYEES_FILTER_RESET)}
         </Button>
       </Grid>
     </Grid>

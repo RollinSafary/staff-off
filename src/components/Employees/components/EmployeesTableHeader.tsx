@@ -1,4 +1,4 @@
-import { TableCell, TableRow, Checkbox } from "@mui/material";
+import { TableCell, Checkbox, TableHead } from "@mui/material";
 import { t } from "i18next";
 import { Translations } from "@/constants/translations";
 
@@ -13,7 +13,7 @@ const EmployeesTableHeader = ({
   isIndeterminate,
   onSelectAll,
 }: Props) => (
-  <TableRow sx={{ gap: 25 }}>
+  <TableHead sx={{ gap: 25 }}>
     <TableCell padding="checkbox">
       <Checkbox
         checked={isAllSelected}
@@ -31,7 +31,7 @@ const EmployeesTableHeader = ({
     <TableCell>{t(Translations.PAGE_EMPLOYEES_TABLE_DAYS)}</TableCell>
     <TableCell>{t(Translations.PAGE_EMPLOYEES_TABLE_HOURS)}</TableCell>
     <TableCell>{t(Translations.PAGE_EMPLOYEES_TABLE_ACTIONS)}</TableCell>
-  </TableRow>
+  </TableHead>
 );
 
 export default EmployeesTableHeader;

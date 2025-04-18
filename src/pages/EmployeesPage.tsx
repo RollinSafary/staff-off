@@ -1,5 +1,5 @@
-import EmployeesComponent from "@/components/Employees";
+import EmployeesContent from "@/components/Employees";
 
 export default function EmployeesPage() {
-  return <EmployeesComponent />;
+  return <EmployeesContent />;
 }
