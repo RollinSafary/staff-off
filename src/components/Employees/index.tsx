@@ -1,5 +1,5 @@
-import EmployeesHeader from "./components/EmployeesHeader";
 import EmployeesTable from "./components/EmployeesTable";
+import EmployeesHeader from "./components/employeesHeader/EmployeesHeader";
 const EmployeesContent = () => {
   return (
     <>

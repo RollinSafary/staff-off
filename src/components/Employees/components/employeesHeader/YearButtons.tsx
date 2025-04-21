@@ -15,7 +15,6 @@ const YearButtons: React.FC = () => {
         gap: 1,
         p: 1,
         justifyContent: "center",
-        width: "100%",
       }}
     >
       <Button>{t(Translations.PAGE_EMPLOYEES_HEADER_YEARS_LAST)}</Button>
