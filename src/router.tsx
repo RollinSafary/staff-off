@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import { NavigationPath } from "./constants/navigation";
 import PermissionPage from "./pages/PermissionPage";
 import ReportsPage from "./pages/ReportsPage";
+import TeamOverviewPage from "./pages/TeamOverviewPage";
 
 const AppRouter = () => {
   return (
@@ -15,6 +16,10 @@ const AppRouter = () => {
           <Route index element={<Home />} />
           <Route path={NavigationPath.dashboard} element={<DashboardPage />} />
           <Route path={NavigationPath.reports} element={<ReportsPage />} />
+          <Route
+            path={NavigationPath.teamOverview}
+            element={<TeamOverviewPage />}
+          />
           <Route
             path={NavigationPath.permissions}
             element={<PermissionPage />}
