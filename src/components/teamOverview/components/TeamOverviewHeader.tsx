@@ -2,13 +2,15 @@ import { Box, Button } from "@mui/material";
 import PrintIcon from "@mui/icons-material/Print";
 import DownloadIcon from "@mui/icons-material/Download";
 import { HeaderContainer } from "./CalendarTableStyles";
+import { Translations } from "@/constants/translations";
+import { t } from "i18next";
 
 export default function TeamOverviewHeader() {
   return (
     <>
       <HeaderContainer>
         <Box>
-          <h1>Team Overview</h1>
+          <h1>{t(Translations.PAGE_TEAM_OVERVIEW_TITLE)} </h1>
         </Box>
         <Box
           display="flex"
@@ -19,10 +21,10 @@ export default function TeamOverviewHeader() {
           <Box />
           <Box display="flex" gap={2}>
             <Button startIcon={<DownloadIcon />} variant="contained">
-              Export Excel
+              {t(Translations.PAGE_TEAM_OVERVIEW_EXPORT_EXCEL)}
             </Button>
             <Button startIcon={<PrintIcon />} variant="outlined">
-              Print
+              {t(Translations.PAGE_TEAM_OVERVIEW_PRINT)}
             </Button>
           </Box>
         </Box>

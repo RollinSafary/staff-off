@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { addMonths, subMonths, format } from "date-fns";
 import CalendarTable from "./CalendarTable";
 import { Box, Button } from "@mui/material";
+import { Translations } from "@/constants/translations";
+import { t } from "i18next";
 
 const staff = [
   { id: 1, name: "Mushegh" },
@@ -31,9 +33,13 @@ const TeamTableContent: React.FC = () => {
             marginBottom: 20,
           }}
         >
-          <Button onClick={handlePrevMonth}>← Prev month</Button>
+          <Button onClick={handlePrevMonth}>
+            ← {t(Translations.PAGE_TEAM_OVERVIEW_TABLE_PREV_MONTH)}
+          </Button>
           <h2>{format(currentDate, "MMMM yyyy")}</h2>
-          <Button onClick={handleNextMonth}>Next month →</Button>
+          <Button onClick={handleNextMonth}>
+            {t(Translations.PAGE_TEAM_OVERVIEW_TABLE_NEXT_MONTH)} →
+          </Button>
         </div>
 
         <CalendarTable currentDate={currentDate} staffMembers={staff} />

@@ -8,6 +8,8 @@ import {
   StyledTable,
 } from "./CalendarTableStyles";
 import { ICalendarTableProps } from "../types/calendarTypes";
+import { t } from "i18next";
+import { Translations } from "@/constants/translations";
 
 const CalendarTable: React.FC<ICalendarTableProps> = ({
   currentDate,
@@ -23,7 +25,10 @@ const CalendarTable: React.FC<ICalendarTableProps> = ({
       <StyledTable>
         <thead>
           <tr>
-            <HeaderCell>Staff member</HeaderCell>
+            <HeaderCell>
+              {" "}
+              {t(Translations.PAGE_TEAM_OVERVIEW_TABLE_STAFF_MEMBER)}
+            </HeaderCell>
             {daysInMonth.map((day) => (
               <HeaderCell key={day.toISOString()}>
                 <div>{format(day, "EEE")}</div>
