@@ -34,21 +34,7 @@ const Navbar = () => {
             <Grid item xs={isDesktop ? 10 : 6}>
               {isDesktop ? (
                 <Grid container justifySelf="flex-start">
-                  {/* <Grid
-                    item
-                    xs={1}
-                    sx={{
-                      display: { xs: "none", md: "flex" },
-                      mr: 2,
-                      cursor: "pointer",
-                    }}
-                    onClick={handleLogoClick}
-                  >
-                    <img src={LogoSvg} alt="Logo" width={120} height={40} />
-                  </Grid> */}
-                  {/* <Grid item xs={9}> */}
                   <DesktopNav />
-                  {/* </Grid> */}
                 </Grid>
               ) : (
                 <Grid container alignItems="center" direction={"row"}>
