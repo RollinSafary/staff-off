@@ -38,7 +38,7 @@ const MobileMenu: React.FC = () => {
     (page: INavigationDetails) => {
       navigate(page.path);
     },
-    [navigate]
+    [navigate],
   );
 
   return (

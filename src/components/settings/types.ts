@@ -1,6 +1,5 @@
-export interface IIntegrationData {
+export interface ISettingDetails {
   id: string;
   title: string;
   description: string;
-  imageURL: string;
 }

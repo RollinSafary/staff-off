@@ -32,7 +32,7 @@ const LanguageSwitcher: React.FC = () => {
 
   // Current language option
   const currentLang = languageOptions.find(
-    (option) => option.code === language
+    (option) => option.code === language,
   );
 
   return (
