@@ -104,7 +104,6 @@ if (unusedKeys.length > 0) {
   console.log(
     "No unused translation keys found! All translations are being used."
   );
-  fs.rmSync(outputPath);
 }
 
 // Create file with unused keys for easier removal
