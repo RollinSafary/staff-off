@@ -4,14 +4,13 @@ import CalendarTable from "./CalendarTable";
 import { Box, Button } from "@mui/material";
 import { Translations } from "@/constants/translations";
 import { t } from "i18next";
-
-const staff = [
-  { id: 1, name: "Mushegh" },
-  { id: 2, name: "Tigran Employee" },
-  { id: 3, name: "Tigran Admin" },
-];
+import { staff } from "./mock";
+import { HeaderContainer } from "./CalendarTableStyles";
+import Legend from "./Legend";
+import { useTranslation } from "react-i18next";
 
 const TeamTableContent: React.FC = () => {
+  const { t } = useTranslation();
   const [currentDate, setCurrentDate] = useState(new Date(2025, 3));
 
   const handlePrevMonth = () => {
@@ -25,14 +24,9 @@ const TeamTableContent: React.FC = () => {
   return (
     <Box sx={{ boxShadow: 2, borderRadius: 1 }}>
       <div style={{ padding: 20 }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: 20,
-          }}
-        >
+        <Legend />
+
+        <HeaderContainer style={{ marginBottom: 20 }}>
           <Button onClick={handlePrevMonth}>
             ← {t(Translations.PAGE_TEAM_OVERVIEW_TABLE_PREV_MONTH)}
           </Button>
@@ -40,7 +34,7 @@ const TeamTableContent: React.FC = () => {
           <Button onClick={handleNextMonth}>
             {t(Translations.PAGE_TEAM_OVERVIEW_TABLE_NEXT_MONTH)} →
           </Button>
-        </div>
+        </HeaderContainer>
 
         <CalendarTable currentDate={currentDate} staffMembers={staff} />
       </div>

@@ -8,13 +8,14 @@ import {
   StyledTable,
 } from "./CalendarTableStyles";
 import { ICalendarTableProps } from "../types/calendarTypes";
-import { t } from "i18next";
 import { Translations } from "@/constants/translations";
+import { useTranslation } from "react-i18next";
 
 const CalendarTable: React.FC<ICalendarTableProps> = ({
   currentDate,
   staffMembers,
 }) => {
+  const { t } = useTranslation();
   const daysInMonth = eachDayOfInterval({
     start: startOfMonth(currentDate),
     end: endOfMonth(currentDate),

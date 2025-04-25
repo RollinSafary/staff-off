@@ -1,11 +1,5 @@
 {
-  "page.team-overview.export-excel": "Export to Excel",
-  "page.team-overview.legend.holiday": "Holiday",
-  "page.team-overview.legend.weekends": "Weekends",
-  "page.team-overview.legend.workday": "Working day",
-  "page.team-overview.print": "Print",
-  "page.team-overview.table.next-month": "Next month",
-  "page.team-overview.table.prev-month": "Previous month",
-  "page.team-overview.table.staff-member": "Staff member",
-  "page.team-overview.title": "Team Overview"
+  "PAGE_TEAM_OVERVIEW_LEGEND_HOLIDAY": "{{prefix}}Holiday",
+  "PAGE_TEAM_OVERVIEW_LEGEND_WEEKENDS": "{{prefix}}Weekends",
+  "PAGE_TEAM_OVERVIEW_LEGEND_WORKDAY": "Working day"
 }
