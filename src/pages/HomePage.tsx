@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Typography, Box, Button, Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import useToast from "../hooks/useToast";
-import { Translations } from "@/constants/translations";
+import { Translations } from "../constants/translations";
 
 function Home() {
   const { t } = useTranslation();

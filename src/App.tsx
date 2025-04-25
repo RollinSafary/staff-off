@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "./theme/ThemeProvider";
 import { LanguageProvider } from "./theme/LanguageContext";
-import Layout from "./components/Layout";
+import MainLayout from "./components/layouts/main";
 import { CssBaseline } from "@mui/material";
 import { ResponsiveProvider } from "./theme/ResponsiveContext";
 import { Outlet } from "react-router-dom";
@@ -12,9 +12,9 @@ const App = () => {
       <CssBaseline />
       <ResponsiveProvider>
         <LanguageProvider>
-          <Layout>
+          <MainLayout>
             <Outlet />
-          </Layout>
+          </MainLayout>
         </LanguageProvider>
       </ResponsiveProvider>
     </ThemeProvider>
