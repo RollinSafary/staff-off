@@ -6,28 +6,30 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import React from "react";
 
 const cards = [
   {
     id: 1,
     count: 3,
-    description: t(Translations.PAGE_DASHBOARD_NUMBER_OF_EMPLOYEES),
+    description: Translations.PAGE_DASHBOARD_NUMBER_OF_EMPLOYEES,
   },
   {
     id: 2,
     count: 2,
-    description: t(Translations.PAGE_DASHBOARD_REQUESTS_TODAY),
+    description: Translations.PAGE_DASHBOARD_REQUESTS_TODAY,
   },
   {
     id: 3,
     count: 1,
-    description: t(Translations.PAGE_DASHBOARD_REQUESTS_THIS_MONTH),
+    description: Translations.PAGE_DASHBOARD_REQUESTS_THIS_MONTH,
   },
 ];
 
 const RequestCards: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div style={{ marginBottom: 15 }}>
       <Box
@@ -57,7 +59,7 @@ const RequestCards: React.FC = () => {
                   {card.count}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {card.description}
+                  {t(card.description)}
                 </Typography>
               </CardContent>
             </CardActionArea>
