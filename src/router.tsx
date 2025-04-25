@@ -24,6 +24,7 @@ const AppRouter = () => {
           <Route index element={<Home />} />
           <Route path={NavigationPath.dashboard} element={<DashboardPage />} />
           <Route path={NavigationPath.settings} element={<SettingsPage />} />
+
           <Route path={NavigationPath.reports} element={<ReportsPage />} />
           <Route
             path={NavigationPath.permissions}
