@@ -26,7 +26,6 @@ const CalendarTable: React.FC<ICalendarTableProps> = ({
         <thead>
           <tr>
             <HeaderCell>
-              {" "}
               {t(Translations.PAGE_TEAM_OVERVIEW_TABLE_STAFF_MEMBER)}
             </HeaderCell>
             {daysInMonth.map((day) => (
