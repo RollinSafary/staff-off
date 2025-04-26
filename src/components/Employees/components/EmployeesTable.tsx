@@ -17,7 +17,7 @@ const EmployeesTable = () => {
     setSelected((prevSelected) =>
       prevSelected.includes(id)
         ? prevSelected.filter((item) => item !== id)
-        : [...prevSelected, id]
+        : [...prevSelected, id],
     );
   };
 

@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Box, Collapse } from "@mui/material";
+import { Collapse } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Translations } from "@/constants/translations";
 import YearButtons from "./YearButtons";
 import ActionButtons from "./ActionButtons";
 import FilterCard from "../employeesFilter/FilterBox";
+import { HeaderContainer, HeaderActions } from "./EmployeesHeaderStyled";
 
 const EmployeesHeader: React.FC = () => {
   const { t } = useTranslation();
@@ -16,32 +17,16 @@ const EmployeesHeader: React.FC = () => {
 
   return (
     <header>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", sm: "row" },
-          alignItems: "center",
-          gap: 2,
-          mb: 2,
-        }}
-      >
+      <HeaderContainer>
         <h1 style={{ margin: 0 }}>{t(Translations.PAGE_EMPLOYEES_TITLE)}</h1>
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            justifyContent: "space-between",
-            gap: 2,
-          }}
-        >
+        <HeaderActions>
           <YearButtons />
           <ActionButtons
             toggleFilters={toggleFilters}
             showFilters={showFilters}
           />
-        </Box>
-      </Box>
+        </HeaderActions>
+      </HeaderContainer>
       <Collapse in={showFilters}>
         <FilterCard />
       </Collapse>
