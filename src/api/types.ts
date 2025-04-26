@@ -115,7 +115,7 @@ export interface ListDocumentsRequest {
   collection: string;
   filters?: Record<string, any>;
   orderBy?: string;
-  orderDirection?: 'asc' | 'desc';
+  orderDirection?: "asc" | "desc";
   limit?: number;
   offset?: number;
 }

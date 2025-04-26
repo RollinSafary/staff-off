@@ -1,14 +1,14 @@
-import { AppBar, Container, Toolbar, Box } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import { useLanguage } from '../../theme/LanguageContext';
-import { useNavigate } from 'react-router-dom';
+import { AppBar, Container, Toolbar, Box } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import { useLanguage } from "../../theme/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
-import MobileMenu from './MobileMenu';
-import DesktopNav from './DesktopNav';
-import LanguageSwitcher from './LanguageSwitcher';
-import ThemeToggle from './ThemeToggle';
-import UserMenu from './UserMenu';
-import LogoSvg from '../../assets/main/logo.svg';
+import MobileMenu from "./MobileMenu";
+import DesktopNav from "./DesktopNav";
+import LanguageSwitcher from "./LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
+import UserMenu from "./UserMenu";
+import LogoSvg from "../../assets/main/logo.svg";
 
 const Navbar = () => {
   const { language } = useLanguage();
@@ -17,7 +17,7 @@ const Navbar = () => {
 
   // Function to get the root URL based on the current language
   const getRootUrl = () => {
-    return language === 'en' ? '/' : '/ru';
+    return language === "en" ? "/" : "/ru";
   };
 
   // Handle logo click
@@ -39,9 +39,9 @@ const Navbar = () => {
           {/* Logo - Desktop */}
           <Box
             sx={{
-              display: { xs: 'none', md: 'flex' },
+              display: { xs: "none", md: "flex" },
               mr: 2,
-              cursor: 'pointer',
+              cursor: "pointer",
             }}
             onClick={handleLogoClick}
           >
@@ -54,10 +54,10 @@ const Navbar = () => {
           {/* Logo - Mobile */}
           <Box
             sx={{
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              justifyContent: 'center',
-              cursor: 'pointer',
+              justifyContent: "center",
+              cursor: "pointer",
             }}
             onClick={handleLogoClick}
           >

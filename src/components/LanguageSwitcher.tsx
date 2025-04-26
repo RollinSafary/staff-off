@@ -1,9 +1,15 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { MenuItem, Select, FormControl, InputLabel, SelectChangeEvent } from '@mui/material';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { createLocalizedPath, removeLanguageFromPath } from '../constants/i18n';
-import { Translations } from '../constants/translations';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import {
+  MenuItem,
+  Select,
+  FormControl,
+  InputLabel,
+  SelectChangeEvent,
+} from "@mui/material";
+import { useNavigate, useLocation } from "react-router-dom";
+import { createLocalizedPath, removeLanguageFromPath } from "../constants/i18n";
+import { Translations } from "../constants/translations";
 
 const LanguageSwitcher: React.FC = () => {
   const { i18n, t } = useTranslation();
@@ -26,7 +32,9 @@ const LanguageSwitcher: React.FC = () => {
 
   return (
     <FormControl sx={{ minWidth: 120 }} size="small">
-      <InputLabel id="language-select-label">{t(Translations.COMMON_LANGUAGE)}</InputLabel>
+      <InputLabel id="language-select-label">
+        {t(Translations.COMMON_LANGUAGE)}
+      </InputLabel>
       <Select
         labelId="language-select-label"
         id="language-select"

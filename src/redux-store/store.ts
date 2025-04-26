@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type Action, configureStore } from '@reduxjs/toolkit';
+import { type Action, configureStore } from "@reduxjs/toolkit";
 
-import rootReducer from './reducer';
+import rootReducer from "./reducer";
 
 const store = configureStore({
   reducer: rootReducer,

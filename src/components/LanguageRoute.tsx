@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react';
-import { Outlet, useParams, Navigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { isValidLanguage, DEFAULT_LANGUAGE, removeLanguageFromPath } from '../constants/i18n';
+import React, { useEffect } from "react";
+import { Outlet, useParams, Navigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import {
+  isValidLanguage,
+  DEFAULT_LANGUAGE,
+  removeLanguageFromPath,
+} from "../constants/i18n";
 
 /**
  * A component that wraps routes with language prefixes.

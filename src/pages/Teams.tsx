@@ -1,9 +1,5 @@
-import Index from "@/components/teams";
+import TeamContent from "@/components/teams";
 const Teams = () => {
-  return (
-    <>
-      <Index />
-    </>
-  );
+  return <TeamContent />;
 };
 export default Teams;

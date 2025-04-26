@@ -1,10 +1,6 @@
 import TeamDirectory from "./components/teams";
 
-const Index = () => {
-  return (
-    <>
-      <TeamDirectory />
-    </>
-  );
+const TeamContent = () => {
+  return <TeamDirectory />;
 };
-export default Index;
+export default TeamContent;

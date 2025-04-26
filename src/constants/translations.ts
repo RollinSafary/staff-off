@@ -1,20 +1,9 @@
 /* AUTO GENERATED FILE. DO NOT MODIFY !!! */
 
 export enum Translations {
-  AUTH_EMAIL = "auth.email",
-  AUTH_FORGOT_PASSWORD = "auth.forgot-password",
-  AUTH_PASSWORD = "auth.password",
-  AUTH_SIGN_IN = "auth.sign-in",
-  AUTH_SIGN_OUT = "auth.sign-out",
-  AUTH_SIGN_UP = "auth.sign-up",
-  COMMON_ABOUT = "common.about",
   COMMON_APP_DESCRIPTION = "common.app-description",
-  COMMON_DARK = "common.dark",
   COMMON_HOME = "common.home",
   COMMON_LANGUAGE = "common.language",
-  COMMON_LIGHT = "common.light",
-  COMMON_SETTINGS = "common.settings",
-  COMMON_THEME = "common.theme",
   COMMON_WELCOME = "common.welcome",
   ERROR_GO_BACK = "error.go-back",
   ERROR_NOT_FOUND = "error.not-found",

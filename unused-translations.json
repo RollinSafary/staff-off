@@ -9,9 +9,5 @@
   "common.dark": "Dark",
   "common.light": "Light",
   "common.settings": "Settings",
-  "common.theme": "Theme",
-  "page.teams.changes": "Created/Last Modified",
-  "page.teams.manager": "Manager",
-  "page.teams.members": "Members",
-  "page.teams.name": "name"
+  "common.theme": "Theme"
 }

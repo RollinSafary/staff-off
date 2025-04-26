@@ -1,6 +1,6 @@
-import { Box } from '@mui/material';
-import { Language } from '../theme/LanguageContext';
-import { languageOptions } from '../mock/languages';
+import { Box } from "@mui/material";
+import { Language } from "../theme/LanguageContext";
+import { languageOptions } from "../mock/languages";
 
 interface LanguageFlagProps {
   language: Language;
@@ -8,7 +8,9 @@ interface LanguageFlagProps {
 }
 
 const LanguageFlag: React.FC<LanguageFlagProps> = ({ language, size = 20 }) => {
-  const flagUrl = languageOptions.find((option) => option.code === language)?.flagUrl;
+  const flagUrl = languageOptions.find(
+    (option) => option.code === language,
+  )?.flagUrl;
 
   return (
     <Box
@@ -18,7 +20,7 @@ const LanguageFlag: React.FC<LanguageFlagProps> = ({ language, size = 20 }) => {
       sx={{
         width: size,
         height: size * 0.75,
-        objectFit: 'cover',
+        objectFit: "cover",
         borderRadius: 0.5,
       }}
     />

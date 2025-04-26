@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   Box,
   IconButton,
@@ -9,13 +9,13 @@ import {
   ListItemText,
   Typography,
   Divider,
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import MenuIcon from '@mui/icons-material/Menu';
-import { useLanguage } from '../../theme/LanguageContext';
-import { pages, getPageTranslation } from '../../mock/navigation';
-import { languageOptions } from '../../mock/languages';
-import LanguageFlag from '../LanguageFlag';
+} from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useLanguage } from "../../theme/LanguageContext";
+import { pages, getPageTranslation } from "../../mock/navigation";
+import { languageOptions } from "../../mock/languages";
+import LanguageFlag from "../LanguageFlag";
 
 const MobileMenu: React.FC = () => {
   const { language, setLanguage } = useLanguage();
@@ -32,8 +32,13 @@ const MobileMenu: React.FC = () => {
 
   return (
     <>
-      <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
-        <IconButton size="large" aria-label="menu" onClick={handleOpen} color="inherit">
+      <Box sx={{ flexGrow: 0, display: { xs: "flex", md: "none" } }}>
+        <IconButton
+          size="large"
+          aria-label="menu"
+          onClick={handleOpen}
+          color="inherit"
+        >
           <MenuIcon />
         </IconButton>
       </Box>
