@@ -8,6 +8,7 @@ import SettingsPage from "./pages/SettingsPage";
 import PermissionPage from "./pages/PermissionPage";
 import ReportsPage from "./pages/ReportsPage";
 import IntegrationPage from "./pages/IntegrationPage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,10 @@ const AppRouter = () => {
         {/* Main app routes */}
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
+          <Route
+            path={NavigationPath.registration}
+            element={<RegistrationPage />}
+          />
           <Route path={NavigationPath.dashboard} element={<DashboardPage />} />
           <Route path={NavigationPath.settings} element={<SettingsPage />} />
           <Route path={NavigationPath.reports} element={<ReportsPage />} />

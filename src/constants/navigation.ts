@@ -16,6 +16,7 @@ export enum NavigationPath {
   announcements = "announcements",
   settings = "settings",
   permissions = "permissions",
+  registration = "registration",
 }
 
 export const pages: INavigationDetails[] = [
