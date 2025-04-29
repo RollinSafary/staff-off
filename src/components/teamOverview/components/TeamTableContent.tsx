@@ -3,7 +3,6 @@ import { addMonths, subMonths, format } from "date-fns";
 import CalendarTable from "./CalendarTable";
 import { Box, Button } from "@mui/material";
 import { Translations } from "@/constants/translations";
-import { t } from "i18next";
 import { staff } from "./mock";
 import { HeaderContainer } from "./CalendarTableStyles";
 import Legend from "./Legend";

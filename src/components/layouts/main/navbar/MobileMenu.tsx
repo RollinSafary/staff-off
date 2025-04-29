@@ -12,10 +12,10 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useLanguage } from "../../theme/LanguageContext";
-import { INavigationDetails, pages } from "../../constants/navigation";
-import { languageOptions } from "../../constants/languages";
-import LanguageFlag from "../LanguageFlag";
+import { useLanguage } from "../../../../theme/LanguageContext";
+import { INavigationDetails, pages } from "../../../../constants/navigation";
+import { languageOptions } from "../../../../constants/languages";
+import LanguageFlag from "../../../LanguageFlag";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
