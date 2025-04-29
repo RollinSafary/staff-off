@@ -1,9 +1,13 @@
+import { Translations } from "@/constants/translations";
 import { StyledButton } from "./styled";
+import { useTranslation } from "react-i18next";
 
-export default function RegisterFooter() {
+const RegisterFooter = () => {
+  const { t } = useTranslation();
   return (
     <StyledButton type="submit" variant="contained" fullWidth>
-      Sign Up
+      {t(Translations.PAGE_REGISTER_FORM_SIGN_UP)}
     </StyledButton>
   );
-}
+};
+export default RegisterFooter;

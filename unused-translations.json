@@ -1,1 +1,13 @@
-{}
+{
+  "page.register.form.agreement": "I agree to theTerms and conditions.",
+  "page.register.form.company-name": "Company name",
+  "page.register.form.confirm-password": "Confirm password",
+  "page.register.form.country": "Country",
+  "page.register.form.email": "Email",
+  "page.register.form.hr-name": "HR name",
+  "page.register.form.password": "Password",
+  "page.register.form.sign-up": "Sign Up",
+  "page.register.form.timezone": "Timezone",
+  "page.register.subtitle": "   Enter your company details:",
+  "page.register.title": "Register and create an account"
+}
