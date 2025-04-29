@@ -1,75 +1,81 @@
-import { useTranslation } from "react-i18next";
+import {
+  TextField,
+  Autocomplete,
+  Button,
+  Checkbox,
+  FormControlLabel,
+} from "@mui/material";
 import { countries, timezones } from "../data/mock";
-import useFormState from "../hooks/useFormState";
-import AgreeCheckbox from "./AgreeCheckBox";
-import FormAutocomplete from "./FormAutocomplete";
-import FormTextField from "./FormTextField";
-import RegisterFooter from "./RegisterFooter";
 import { Translations } from "@/constants/translations";
+import { useTranslation } from "react-i18next";
 
 const RegisterForm = () => {
   const { t } = useTranslation();
-  const {
-    fields,
-    handleInputChange,
-    handleAutocompleteChange,
-    handleCheckboxChange,
-  } = useFormState();
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (
-      Object.values(fields).some(
-        (field) => field === "" || field === null || field === false
-      )
-    ) {
-      return;
-    }
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <FormTextField
+    <form>
+      <TextField
         label={t(Translations.PAGE_REGISTER_FORM_EMAIL)}
-        value={fields.email}
-        onChange={handleInputChange("email")}
+        variant="outlined"
+        fullWidth
       />
-      <FormTextField
+
+      <TextField
         label={t(Translations.PAGE_REGISTER_FORM_COMPANY_NAME)}
-        value={fields.companyName}
-        onChange={handleInputChange("companyName")}
+        variant="outlined"
       />
-      <FormTextField
+
+      <TextField
         label={t(Translations.PAGE_REGISTER_FORM_HR_NAME)}
-        value={fields.hrName}
-        onChange={handleInputChange("hrName")}
+        variant="outlined"
       />
-      <FormAutocomplete
-        label={t(Translations.PAGE_REGISTER_FORM_COUNTRY)}
+
+      <Autocomplete
         options={countries}
-        value={fields.country}
-        onChange={handleAutocompleteChange("country")}
+        getOptionLabel={(option) => option.label}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label={t(Translations.PAGE_REGISTER_FORM_COUNTRY)}
+          />
+        )}
+        fullWidth
       />
-      <FormAutocomplete
-        label={t(Translations.PAGE_REGISTER_FORM_TIMEZONE)}
+
+      <Autocomplete
         options={timezones}
-        value={fields.timezone}
-        onChange={handleAutocompleteChange("timezone")}
+        getOptionLabel={(option) => option.label}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label={t(Translations.PAGE_REGISTER_FORM_TIMEZONE)}
+          />
+        )}
+        fullWidth
       />
-      <FormTextField
+
+      <TextField
         label={t(Translations.PAGE_REGISTER_FORM_PASSWORD)}
         type="password"
-        value={fields.password}
-        onChange={handleInputChange("password")}
+        variant="outlined"
+        fullWidth
+        margin="normal"
       />
-      <FormTextField
+      <TextField
         label={t(Translations.PAGE_REGISTER_FORM_CONFIRM_PASSWORD)}
         type="password"
-        value={fields.confirmPassword}
-        onChange={handleInputChange("confirmPassword")}
+        variant="outlined"
+        fullWidth
+        margin="normal"
       />
-      <AgreeCheckbox checked={fields.agree} onChange={handleCheckboxChange} />
-      <RegisterFooter />
+
+      <FormControlLabel
+        control={<Checkbox />}
+        label={t(Translations.PAGE_REGISTER_FORM_AGREEMENT)}
+      />
+
+      <Button type="submit" variant="contained" color="primary" fullWidth>
+        {t(Translations.PAGE_REGISTER_FORM_SIGN_UP)}
+      </Button>
     </form>
   );
 };
