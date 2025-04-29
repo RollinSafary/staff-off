@@ -1,1 +1,5 @@
-{}
+{
+  "PAGE_TEAM_OVERVIEW_LEGEND_HOLIDAY": "{{prefix}}Holiday",
+  "PAGE_TEAM_OVERVIEW_LEGEND_WEEKENDS": "{{prefix}}Weekends",
+  "PAGE_TEAM_OVERVIEW_LEGEND_WORKDAY": "Working day"
+}

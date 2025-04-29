@@ -7,6 +7,7 @@ import { NavigationPath } from "./constants/navigation";
 import SettingsPage from "./pages/SettingsPage";
 import PermissionPage from "./pages/PermissionPage";
 import ReportsPage from "./pages/ReportsPage";
+import TeamOverviewPage from "./pages/TeamOverviewPage";
 import IntegrationPage from "./pages/IntegrationPage";
 
 const AppRouter = () => {
@@ -25,6 +26,10 @@ const AppRouter = () => {
           <Route path={NavigationPath.dashboard} element={<DashboardPage />} />
           <Route path={NavigationPath.settings} element={<SettingsPage />} />
           <Route path={NavigationPath.reports} element={<ReportsPage />} />
+          <Route
+            path={NavigationPath.teamOverview}
+            element={<TeamOverviewPage />}
+          />
           <Route
             path={NavigationPath.permissions}
             element={<PermissionPage />}
