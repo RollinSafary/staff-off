@@ -12,7 +12,6 @@ const FormTextField = ({
     value={value}
     onChange={onChange}
     fullWidth
-    margin="normal"
     type={type}
   />
 );

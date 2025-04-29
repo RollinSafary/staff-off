@@ -12,9 +12,7 @@ const FormAutocomplete = ({
     getOptionLabel={(option) => option.label}
     value={value}
     onChange={onChange}
-    renderInput={(params) => (
-      <TextField {...params} label={label} margin="normal" />
-    )}
+    renderInput={(params) => <TextField {...params} label={label} />}
     fullWidth
   />
 );
