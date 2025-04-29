@@ -1,5 +1,5 @@
-import Permissions from "@/components/permission";
+import PermissionsContent from "@/components/permission";
 
 export default function PermissionPage() {
-  return <Permissions />;
+  return <PermissionsContent />;
 }
