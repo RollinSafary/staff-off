@@ -5,23 +5,23 @@ import FilterMultiSelect from "./FilterMultiSelect";
 import FilterActions from "./FilterActions";
 import { Translations } from "@/constants/translations";
 import { useTranslation } from "react-i18next";
-import { Filters } from "./filterTypes";
+import { IFilters } from "./filterTypes";
 import { multiSelectConfigs } from "./filterMultiSelectConfigs";
 
 import { InitialFilters } from "./filterInitialState";
 
 const FilterCard: React.FC = () => {
   const { t } = useTranslation();
-  const [filters, setFilters] = useState<Filters>(InitialFilters);
+  const [filters, setFilters] = useState<IFilters>(InitialFilters);
 
   const handleMultiSelectChange =
-    (field: keyof Filters) =>
+    (field: keyof IFilters) =>
     (_: React.SyntheticEvent<Element, Event>, value: string[]) => {
       setFilters((prev) => ({ ...prev, [field]: value }));
     };
 
   const handleInputChange =
-    (field: keyof Filters) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    (field: keyof IFilters) => (event: React.ChangeEvent<HTMLInputElement>) => {
       setFilters((prev) => ({ ...prev, [field]: event.target.value }));
     };
 
@@ -45,7 +45,7 @@ const FilterCard: React.FC = () => {
               label={t(label)}
               options={options}
               value={filters[key]}
-              onChange={handleMultiSelectChange(key as keyof Filters)}
+              onChange={handleMultiSelectChange(key as keyof IFilters)}
             />
           ))}
 

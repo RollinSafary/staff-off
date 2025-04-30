@@ -1,16 +1,12 @@
 import { Autocomplete, TextField, Grid } from "@mui/material";
+import { IMultiSelectProps } from "../../types";
 
-type Props = {
-  label: string;
-  value: string[];
-  options: string[];
-  onChange: (
-    event: React.SyntheticEvent<Element, Event>,
-    value: string[],
-  ) => void;
-};
-
-const FilterMultiSelect = ({ label, value, options, onChange }: Props) => (
+const FilterMultiSelect = ({
+  label,
+  value,
+  options,
+  onChange,
+}: IMultiSelectProps) => (
   <Grid item xs={12} md={4}>
     <Autocomplete
       multiple

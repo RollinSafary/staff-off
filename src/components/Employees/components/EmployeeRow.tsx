@@ -7,15 +7,9 @@ import {
   Typography,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Employee } from "../types/index";
+import { IProps } from "../types/index";
 
-type Props = {
-  employee: Employee;
-  isSelected: boolean;
-  onSelect: () => void;
-};
-
-const EmployeeRow = ({ employee, isSelected, onSelect }: Props) => (
+const EmployeeRow = ({ employee, isSelected, onSelect }: IProps) => (
   <TableRow hover>
     <TableCell padding="checkbox">
       <Checkbox checked={isSelected} onChange={onSelect} />

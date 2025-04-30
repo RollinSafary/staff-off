@@ -1,12 +1,8 @@
 import React from "react";
 import { TablePagination } from "@mui/material";
+import { IPaginationProps } from "../types";
 
-interface Props {
-  rowsPerPage: number;
-  count: number;
-}
-
-const TablePaginationSection = ({ rowsPerPage, count }: Props) => (
+const TablePaginationSection = ({ rowsPerPage, count }: IPaginationProps) => (
   <TablePagination
     rowsPerPageOptions={[50]}
     component="div"

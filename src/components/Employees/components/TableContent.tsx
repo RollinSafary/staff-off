@@ -2,15 +2,7 @@ import React from "react";
 import { Table, TableBody, TableContainer } from "@mui/material";
 import EmployeesTableHeader from "./EmployeesTableHeader";
 import EmployeeRow from "./EmployeeRow";
-import { Employee } from "../types/index";
-
-interface Props {
-  employees: Employee[];
-  selected: number[];
-  onSelectAll: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onSelectOne: (id: number) => void;
-  isSelected: (id: number) => boolean;
-}
+import { IContentProps } from "../types/index";
 
 const TableContent = ({
   employees,
@@ -18,7 +10,7 @@ const TableContent = ({
   onSelectAll,
   onSelectOne,
   isSelected,
-}: Props) => {
+}: IContentProps) => {
   return (
     <TableContainer
       sx={{

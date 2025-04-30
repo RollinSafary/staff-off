@@ -1,4 +1,4 @@
-export interface Filters {
+export interface IFilters {
   name: string;
   team: string[];
   leavePolicy: string[];

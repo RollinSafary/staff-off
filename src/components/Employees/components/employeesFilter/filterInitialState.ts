@@ -1,6 +1,6 @@
-import { Filters } from "./filterTypes";
+import { IFilters } from "./filterTypes";
 
-export const InitialFilters: Filters = {
+export const InitialFilters: IFilters = {
   name: "",
   team: [],
   leavePolicy: [],
