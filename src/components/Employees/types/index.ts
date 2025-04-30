@@ -35,6 +35,6 @@ export interface IMultiSelectProps {
   options: string[];
   onChange: (
     event: React.SyntheticEvent<Element, Event>,
-    value: string[]
+    value: string[],
   ) => void;
 }
