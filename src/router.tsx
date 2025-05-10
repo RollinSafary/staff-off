@@ -7,19 +7,17 @@ import { NavigationPath } from "./constants/navigation";
 import SettingsPage from "./pages/SettingsPage";
 import PermissionPage from "./pages/PermissionPage";
 import ReportsPage from "./pages/ReportsPage";
+import EmployeesPage from "./pages/EmployeesPage";
 import IntegrationPage from "./pages/IntegrationPage";
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Default route - redirects to the default language */}
         <Route path="/" element={<App />} />
 
-        {/* Language-specific routes */}
         <Route path="/:lang/*" element={<App />} />
 
-        {/* Main app routes */}
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path={NavigationPath.dashboard} element={<DashboardPage />} />
@@ -29,6 +27,7 @@ const AppRouter = () => {
             path={NavigationPath.permissions}
             element={<PermissionPage />}
           />
+          <Route path={NavigationPath.employees} element={<EmployeesPage />} />
           <Route
             path={NavigationPath.integrations}
             element={<IntegrationPage />}
