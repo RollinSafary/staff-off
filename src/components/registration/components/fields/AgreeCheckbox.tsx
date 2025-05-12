@@ -1,8 +1,8 @@
-import { Checkbox, FormControlLabel, Typography } from "@mui/material";
-import { useTranslation } from "react-i18next";
+import { Checkbox, FormControlLabel } from "@mui/material";
 import { Translations } from "@/constants/translations";
+import { useTranslation } from "react-i18next";
+import { MyContext } from "../../context/FormContext";
 import { useContext } from "react";
-import { MyContext } from "../context/FormContext";
 
 const AgreeCheckbox = () => {
   const { t } = useTranslation();
@@ -16,12 +16,7 @@ const AgreeCheckbox = () => {
           onChange={(e) => setAgreement(e.target.checked)}
         />
       }
-      label={
-        <Typography variant="body2">
-          {t(Translations.PAGE_REGISTER_FORM_AGREEMENT)}
-        </Typography>
-      }
-      sx={{ mt: 1 }}
+      label={t(Translations.PAGE_REGISTER_FORM_AGREEMENT)}
     />
   );
 };

@@ -1,11 +1,27 @@
-import { AutocompleteChangeReason } from "@mui/material";
-import { SyntheticEvent } from "react";
+import { SetStateAction } from "react";
 
-export interface IFormTextFieldProps {
-  label: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  type?: string;
+export interface IRegistrationFormData {
+  email: string;
+  companyName: string;
+  firstName: string;
+  lastName: string;
+  country: string;
+  utc: string;
+  password: string;
+  confirmPassword: string;
+  agreement: boolean;
+}
+
+export interface IRegistrationFormContext extends IRegistrationFormData {
+  setEmail: React.Dispatch<SetStateAction<string>>;
+  setCompanyName: React.Dispatch<SetStateAction<string>>;
+  setFirstName: React.Dispatch<SetStateAction<string>>;
+  setLastName: React.Dispatch<SetStateAction<string>>;
+  setCountry: React.Dispatch<SetStateAction<string>>;
+  setUtc: React.Dispatch<SetStateAction<string>>;
+  setPassword: React.Dispatch<SetStateAction<string>>;
+  setConfirmPassword: React.Dispatch<SetStateAction<string>>;
+  setAgreement: React.Dispatch<SetStateAction<boolean>>;
 }
 export interface IOption {
   label: string;
@@ -14,28 +30,6 @@ export interface IOption {
 export interface IFormAutocompleteProps {
   label: string;
   options: IOption[];
-  value: IOption | null;
-  onChange: (
-    event: SyntheticEvent,
-    newValue: IOption | null,
-    reason: AutocompleteChangeReason
-  ) => void;
-}
-export interface IAgreeCheckboxProps {
-  checked: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
-export interface IOption {
-  label: string;
-}
-
-export interface IFormFields {
-  email: string;
-  companyName: string;
-  hrName: string;
-  password: string;
-  confirmPassword: string;
-  country: IOption | null;
-  timezone: IOption | null;
-  agree: boolean;
+  value: string;
+  onChange: (value: string) => void;
 }
