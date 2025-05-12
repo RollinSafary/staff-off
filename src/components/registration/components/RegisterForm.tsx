@@ -1,26 +1,26 @@
-// 📁 components/form/RegisterForm.tsx
-import EmailField from "./fields/EmailField";
-import CompanyNameField from "./fields/CompanyNameField";
-import HrNameField from "./fields/HrNameField";
-import CountryField from "./fields/CountryField";
-import TimezoneField from "./fields/TimezoneField";
-import PasswordField from "./fields/PasswordField";
-import ConfirmPasswordField from "./fields/ConfirmPasswordField";
-import AgreeCheckbox from "./fields/AgreeCheckbox";
-import SubmitButton from "./fields/SubmitButton";
+import { useCallback, useContext } from "react";
+import { MyContext } from "../context/FormContext";
+import FormFieldsGroup from "./FormFieldsGroup";
+import RegisterFooter from "./RegisterFooter";
+import useFormValidation from "./UseFormValidation";
 
 const RegisterForm = () => {
+  const context = useContext(MyContext);
+  const isFormValid = useFormValidation(context);
+
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      if (!isFormValid) return;
+      console.log("Submit!");
+    },
+    [isFormValid]
+  );
+
   return (
-    <form>
-      <EmailField />
-      <CompanyNameField />
-      <HrNameField />
-      <CountryField />
-      <TimezoneField />
-      <PasswordField />
-      <ConfirmPasswordField />
-      <AgreeCheckbox />
-      <SubmitButton />
+    <form onSubmit={handleSubmit}>
+      <FormFieldsGroup />
+      <RegisterFooter disabled={!isFormValid} />
     </form>
   );
 };
